@@ -1,9 +1,9 @@
-[Ll]ibrary/
-[Tt]emp/
-[Oo]bj/
-[Bb]uild/
-[Bb]uilds/
-[Ll]ogs/
+/GoSaveThem/[Ll]ibrary/
+/GoSaveThem/[Tt]emp/
+/GoSaveThem/[Oo]bj/
+/GoSaveThem/[Bb]uild/
+/GoSaveThem/[Bb]uilds/
+/GoSaveThem/[Ll]ogs/
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # [Aa]ssets/AssetStoreTools*
