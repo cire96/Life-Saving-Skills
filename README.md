@@ -1,5 +1,5 @@
 # Life-Saving-Skills
-<<<<<<< HEAD
+<<<<<< HEAD
 push test (Rasmus)
 =======
 
