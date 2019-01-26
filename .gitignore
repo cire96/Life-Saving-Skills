@@ -54,6 +54,9 @@ sysinfo.txt
 crashlytics-build.properties
 
 
+#unity version
+/GoSaveThem/ProjectSettings/ProjectVersion.txt
+
 
 =========================
 # Operating System Files
