@@ -26,7 +26,7 @@ public class Movement : MonoBehaviour
         moveVertical = Input.GetAxis("Vertical");
 
         movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        rb.AddForce(movement*speed);
+        rb.AddForce(movement*speed*Time.deltaTime);
 
         if ( rb.velocity.magnitude > 0.01f ){
             Vector3 vector =  new Vector3(rb.velocity.x, 0, rb.velocity.z);
