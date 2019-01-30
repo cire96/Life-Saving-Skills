@@ -11,19 +11,22 @@ public class Movement : MonoBehaviour
     private float moveVertical;
     private Vector3 movement;
     private Vector3 angleVelocity;
+
+    protected Joystick joystick;
     
     // Start is called before the first frame update
     void Start()
     {   
         rb = GetComponent<Rigidbody>();    
         //rb.constraints = RigidbodyConstraints.FreezePositionY;
+        joystick = FindObjectOfType<Joystick>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        moveHorizontal = Input.GetAxis("Horizontal");
-        moveVertical = Input.GetAxis("Vertical");
+        moveHorizontal = joystick.Horizontal + Input.GetAxis("Horizontal");
+        moveVertical = joystick.Vertical + Input.GetAxis("Vertical");
 
         movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         rb.AddForce(movement*speed*Time.deltaTime);
