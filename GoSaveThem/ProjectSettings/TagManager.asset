@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Veh
+  - Env
+  - Road
+  - Building
   layers:
   - Default
   - TransparentFX
@@ -14,11 +18,11 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Veh
+  - Road
+  - Building
+  - Env
+  - Fx
   - 
   - 
   - 
