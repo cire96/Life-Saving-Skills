@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour
 {
     public float speed;
     public Rigidbody rb;
+    public Animator anim;
     
     private float moveHorizontal;
     private float moveVertical;
@@ -17,7 +18,8 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
-        rb = GetComponent<Rigidbody>();    
+        rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
         //rb.constraints = RigidbodyConstraints.FreezePositionY;
         joystick = FindObjectOfType<Joystick>();
     }
@@ -27,7 +29,8 @@ public class Movement : MonoBehaviour
     {
         moveHorizontal = joystick.Horizontal + Input.GetAxis("Horizontal");
         moveVertical = joystick.Vertical + Input.GetAxis("Vertical");
-
+        anim.SetFloat("Movement", (Mathf.Abs(moveHorizontal) + Mathf.Abs(moveVertical))/2);
+  
         movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         rb.AddForce(movement*speed*Time.deltaTime);
 
