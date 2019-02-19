@@ -5,24 +5,38 @@ using UnityEngine;
 public class UIAppear : MonoBehaviour
 {
  
-    public GameObject ActionButton;
+    public GameObject ActionBtn, BleedingBtn, RABtn, BreathingBtn, CBBtn, PulseBtn, Victim,
+    BlackBtn, RedBtn, GreenBtn, YellowBtn, PriorityBtn;
+    public List<GameObject> actions;
+    public List<GameObject> cards;
 
-    void start(){
-    	Debug.Log("Star Run");
-    	ActionButton.SetActive(false);
+    void Start(){
+        actions = new List<GameObject>(){BleedingBtn, RABtn, BreathingBtn, PulseBtn, CBBtn};
+        cards = new List<GameObject>(){BlackBtn,GreenBtn,RedBtn,YellowBtn};
     }
-     
+
     void OnTriggerEnter (Collider other) {
         if (other.tag =="Player") {
     	    Debug.Log("ENTERED");
-    	    ActionButton.SetActive(true);
+            foreach(GameObject action in actions){
+                action.SetActive(true);
+            }
+            PriorityBtn.SetActive(true);
         }
+
     }
  
     void OnTriggerExit (Collider other) {
         if (other.tag =="Player") {
         	Debug.Log("Exited");
-            ActionButton.SetActive(false);
+            foreach(GameObject btn in actions){
+                btn.SetActive(false);
+            }
+            foreach(GameObject btn in cards){
+                btn.SetActive(false);
+            }
+            PriorityBtn.SetActive(false);
+            ActionBtn.SetActive(false);
         }
     }
 }
