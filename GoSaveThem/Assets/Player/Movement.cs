@@ -46,4 +46,12 @@ public class Movement : MonoBehaviour
         //rb.MoveRotation(rb.rotation * deltaRotation);
 
     }
+
+    public void FootR()
+    {
+    }
+
+    public void FootL()
+    {
+    }
 }
