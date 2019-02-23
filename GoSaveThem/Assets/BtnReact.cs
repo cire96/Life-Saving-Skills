@@ -8,6 +8,8 @@ public class BtnReact : MonoBehaviour
     BlackBtn, RedBtn, GreenBtn, YellowBtn, PriorityBtn;
     public List<GameObject> actions;
     public List<GameObject> cards;
+    public GameObject[] victims;
+
 
     void Start(){
         actions = new List<GameObject>(){BleedingBtn, RABtn, BreathingBtn, PulseBtn, CBBtn};
@@ -20,6 +22,8 @@ public class BtnReact : MonoBehaviour
         }
         PriorityBtn.SetActive(false);
         ActionBtn.SetActive(false);
+
+        victims = GameObject.FindGameObjectsWithTag("Victim");
     }
 
     public void Action(){
@@ -43,6 +47,19 @@ public class BtnReact : MonoBehaviour
         ActionBtn.SetActive(true);
         PriorityBtn.SetActive(false);
 
+    }
+
+    public void GivePriority(string color){
+        Debug.Log("ran fuction");
+        foreach(GameObject victim in victims){
+            Debug.Log("loop..");
+            UIAppear UIAppear = victim.transform.Find("Radius").GetComponent<UIAppear>();
+            if (UIAppear.active){
+                Debug.Log("found victim");
+                ShowPriority ShowPriority = victim.transform.Find("PriorityCard").GetComponent<ShowPriority>();
+                ShowPriority.UpdatePriority(color);
+            }
+        }
     }
 
     public void ChangeScene(){

@@ -9,15 +9,18 @@ public class UIAppear : MonoBehaviour
     BlackBtn, RedBtn, GreenBtn, YellowBtn, PriorityBtn;
     public List<GameObject> actions;
     public List<GameObject> cards;
+    public bool active;
 
     void Start(){
         actions = new List<GameObject>(){BleedingBtn, RABtn, BreathingBtn, PulseBtn, CBBtn};
         cards = new List<GameObject>(){BlackBtn,GreenBtn,RedBtn,YellowBtn};
+        active = false;
     }
 
     void OnTriggerEnter (Collider other) {
         if (other.tag =="Player") {
     	    Debug.Log("ENTERED");
+    	    active = true;
             foreach(GameObject action in actions){
                 action.SetActive(true);
             }
@@ -29,6 +32,7 @@ public class UIAppear : MonoBehaviour
     void OnTriggerExit (Collider other) {
         if (other.tag =="Player") {
         	Debug.Log("Exited");
+        	active = false;
             foreach(GameObject btn in actions){
                 btn.SetActive(false);
             }
