@@ -8,6 +8,7 @@ TagManager:
   - Env
   - Road
   - Building
+  - Obstical
   layers:
   - Default
   - TransparentFX

@@ -29,7 +29,6 @@ public class Movement : MonoBehaviour
     {
         moveHorizontal = joystick.Horizontal + Input.GetAxis("Horizontal");
         moveVertical = joystick.Vertical + Input.GetAxis("Vertical");
-        anim.SetFloat("Movement", (Mathf.Abs(moveHorizontal) + Mathf.Abs(moveVertical))/2);
   
         movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         rb.AddForce(movement*speed*Time.deltaTime);
@@ -47,6 +46,16 @@ public class Movement : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        Debug.Log((Mathf.Abs(moveHorizontal) + Mathf.Abs(moveVertical)));
+        anim.SetFloat("Movement", (Mathf.Abs(moveHorizontal) + Mathf.Abs(moveVertical)));
+    }
+
+
+
+
+    // Animation footing methods (rpg animations are read only)
     public void FootR()
     {
     }
