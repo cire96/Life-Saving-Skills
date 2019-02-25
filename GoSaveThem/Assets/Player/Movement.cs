@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour
 {
     public float speed;
     public Rigidbody rb;
+    public Animator anim;
     
     private float moveHorizontal;
     private float moveVertical;
@@ -17,7 +18,8 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
-        rb = GetComponent<Rigidbody>();    
+        rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
         //rb.constraints = RigidbodyConstraints.FreezePositionY;
         joystick = FindObjectOfType<Joystick>();
     }
@@ -27,7 +29,7 @@ public class Movement : MonoBehaviour
     {
         moveHorizontal = joystick.Horizontal + Input.GetAxis("Horizontal");
         moveVertical = joystick.Vertical + Input.GetAxis("Vertical");
-
+  
         movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         rb.AddForce(movement*speed*Time.deltaTime);
 
@@ -42,5 +44,23 @@ public class Movement : MonoBehaviour
         //Quaternion deltaRotation = Quaternion.Euler(angleVelocity * Time.deltaTime);
         //rb.MoveRotation(rb.rotation * deltaRotation);
 
+    }
+
+    private void Update()
+    {
+        Debug.Log((Mathf.Abs(moveHorizontal) + Mathf.Abs(moveVertical)));
+        anim.SetFloat("Movement", (Mathf.Abs(moveHorizontal) + Mathf.Abs(moveVertical)));
+    }
+
+
+
+
+    // Animation footing methods (rpg animations are read only)
+    public void FootR()
+    {
+    }
+
+    public void FootL()
+    {
     }
 }
