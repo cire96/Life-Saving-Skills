@@ -8463,6 +8463,38 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 7167008837213522198, guid: 35f8e763727ff4f25935d2231c15518f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3db3cd16e06e94a0eb0c8661d4c347db,
+        type: 3}
+    - target: {fileID: 7167008837213522198, guid: 35f8e763727ff4f25935d2231c15518f,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167008838030036510, guid: 35f8e763727ff4f25935d2231c15518f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3db3cd16e06e94a0eb0c8661d4c347db,
+        type: 3}
+    - target: {fileID: 7167008838030036510, guid: 35f8e763727ff4f25935d2231c15518f,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167008836782240627, guid: 35f8e763727ff4f25935d2231c15518f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167008838706763646, guid: 35f8e763727ff4f25935d2231c15518f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35f8e763727ff4f25935d2231c15518f, type: 3}
 --- !u!1001 &1133183015
@@ -12223,12 +12255,12 @@ PrefabInstance:
     - target: {fileID: 956888425316622994, guid: 36e6e103f37ee3442a9cca0ae188b838,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.77
+      value: 2.51
       objectReference: {fileID: 0}
     - target: {fileID: 956888425316622994, guid: 36e6e103f37ee3442a9cca0ae188b838,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -57.51
+      value: -52.4
       objectReference: {fileID: 0}
     - target: {fileID: 956888425316622994, guid: 36e6e103f37ee3442a9cca0ae188b838,
         type: 3}
