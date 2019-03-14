@@ -9,7 +9,6 @@ public class BtnReact : MonoBehaviour
     public List<GameObject> actions;
     public List<GameObject> cards;
     public GameObject[] victims;
-    private bool pulseIsPressed, breathIsPressed;
 
 
     void Start(){
@@ -50,7 +49,7 @@ public class BtnReact : MonoBehaviour
 
     }
 
-    private GameObject getVictim(){
+    public GameObject getVictim(){
         foreach(GameObject victim in victims){
             Debug.Log("loop..");
             UIAppear UIAppear = victim.transform.Find("Radius").GetComponent<UIAppear>();
@@ -97,7 +96,7 @@ public class BtnReact : MonoBehaviour
 
         BreathingEffect.BreathEnable();
     }
-    
+
 }
 
 
