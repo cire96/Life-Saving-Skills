@@ -1635,6 +1635,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.368409, y: 2.9295616, z: 1.9148178}
   m_Center: {x: 0.00000035762787, y: 1.4647808, z: 0.00000035762787}
+--- !u!1 &186346901 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7167008837855478809, guid: 35f8e763727ff4f25935d2231c15518f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1127261332}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &189916690 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7167008837859759827, guid: 35f8e763727ff4f25935d2231c15518f,
@@ -2630,18 +2636,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae7b8255185ace64ca379cb1ca3b24e6, type: 3}
---- !u!114 &316030383 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7167008837855478802, guid: 35f8e763727ff4f25935d2231c15518f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1127261332}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdf4c165b853af44381b66a139649841, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &316030384 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7167008837855478813, guid: 35f8e763727ff4f25935d2231c15518f,
@@ -8366,8 +8360,13 @@ PrefabInstance:
     - target: {fileID: 7167008837855478809, guid: 35f8e763727ff4f25935d2231c15518f,
         type: 3}
       propertyPath: m_Name
-      value: Hub
+      value: HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 7167008837855478802, guid: 35f8e763727ff4f25935d2231c15518f,
+        type: 3}
+      propertyPath: BreathImage
+      value: 
+      objectReference: {fileID: 1623296186}
     - target: {fileID: 7167008837855478813, guid: 35f8e763727ff4f25935d2231c15518f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8729,11 +8728,6 @@ PrefabInstance:
       propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7167008837855478802, guid: 35f8e763727ff4f25935d2231c15518f,
-        type: 3}
-      propertyPath: BreathImage
-      value: 
-      objectReference: {fileID: 1623296186}
     - target: {fileID: 7167008837859759825, guid: 35f8e763727ff4f25935d2231c15518f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -8742,7 +8736,7 @@ PrefabInstance:
     - target: {fileID: 7167008837859759825, guid: 35f8e763727ff4f25935d2231c15518f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7167008837859759825, guid: 35f8e763727ff4f25935d2231c15518f,
         type: 3}
@@ -8753,11 +8747,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 316030383}
+      objectReference: {fileID: 186346901}
     - target: {fileID: 7167008837859759825, guid: 35f8e763727ff4f25935d2231c15518f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Breathing
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7167008837859759825, guid: 35f8e763727ff4f25935d2231c15518f,
         type: 3}

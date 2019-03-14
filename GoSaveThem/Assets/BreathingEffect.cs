@@ -1,35 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class BreathingEffect : MonoBehaviour
 {
     public int freq;
     public GameObject Img;
+    private bool active = false;
     // Start is called before the first frame update
     void Start()
     {
-        freq = -1;
-        Img.SetActive(false);
+        Img.SetActive(active);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-        if(freq != -1){
-           ObjectRenderer.enabled = !(ObjectRenderer.enabled);
-        }
-        
-    }
-
-    public void BreathEnable(int newFreq){
+    public void BreathEnable(){
         Debug.Log("BreathEnabled");
-        freq = newFreq;
         Img.SetActive(true);
-    }
-    public void BrethDisable(){
-        freq = -1;
-        Img.SetActive(false);
     }
 }

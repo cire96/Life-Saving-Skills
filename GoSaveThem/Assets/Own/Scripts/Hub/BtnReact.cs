@@ -9,6 +9,7 @@ public class BtnReact : MonoBehaviour
     public List<GameObject> actions;
     public List<GameObject> cards;
     public GameObject[] victims;
+    private bool pulseIsPressed, breathIsPressed;
 
 
     void Start(){
@@ -74,15 +75,29 @@ public class BtnReact : MonoBehaviour
         
     }
 
+    public void ReleaseAirways(){
+        GameObject victim = getVictim();
+        Parameters Parameters = victim.GetComponent<Parameters>();
+        // Play animation function
+        Parameters.FreeAirways();
+
+    }
+
+    public void Bleeding(){
+        GameObject victim = getVictim();
+        Parameters Parameters = victim.GetComponent<Parameters>();
+        // Play animation function
+        Parameters.StopBleeding();       
+    }
 
     public void Breathing(){
         GameObject victim = getVictim();
-        BreathingEffect BreathingEffect = BreathImage.GetComponent<BreathingEffect>();
+        BreathingEffect BreathingEffect = victim.GetComponent<BreathingEffect>();
         Parameters Parameters = victim.GetComponent<Parameters>();
 
-        BreathingEffect.BreathEnable(Parameters.Bfreq);
-
+        BreathingEffect.BreathEnable();
     }
+    
 }
 
 
