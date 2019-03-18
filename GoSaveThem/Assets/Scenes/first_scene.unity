@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7871,8 +7871,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 600, y: 600}
+  m_AnchoredPosition: {x: 0, y: 0.012474}
+  m_SizeDelta: {x: 2048, y: 1536}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1040036898
 MonoBehaviour:
@@ -7883,11 +7883,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1040036896}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0567d6040943e944e8300eb2dd43e1c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 138d095a7b2cd8b4e92f588b096ec0c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freq: 0
-  Img: {fileID: 1040036896}
+  Hud: {fileID: 186346901}
+  BloodyScreen: {fileID: 1040036896}
 --- !u!114 &1040036899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7908,7 +7908,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 9a00716a26c2a4148b64e8831922fe48, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
