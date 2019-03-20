@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class TakePulse : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {   
     public GameObject Hud;
-    public GameObject BloodyScreen;
+    public GameObject BloodyScreen; 
+    public GameObject PulseBlur;
     bool ispressed = false;
     double Delay, timeLeft;
     float transparency = 1.0f;
@@ -16,7 +17,7 @@ public class TakePulse : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     // Start is called before the first frame update
     void Start () {
         BloodyScreen.SetActive(false);
-
+        PulseBlur.SetActive(false);
     }
     void Update()
     {
@@ -30,11 +31,13 @@ public class TakePulse : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         ispressed = true;
         startPulsation();
+        PulseBlur.SetActive(true);
     }
     
     public void OnPointerUp(PointerEventData eventData)
     {	
     	BloodyScreen.SetActive(false);
+        PulseBlur.SetActive(false);
         ispressed = false;
     }
 
@@ -64,7 +67,7 @@ public class TakePulse : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         Parameters Parameters = victim.GetComponent<Parameters>();
 
         int Pulse = Parameters.Pulse;
-        Delay = (double) Pulse / 60.0;
+        Delay = (double)60.0 / Pulse;
         timeLeft = Delay;
         BloodyScreen.SetActive(true);
     }
