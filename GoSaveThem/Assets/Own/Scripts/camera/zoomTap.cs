@@ -4,40 +4,52 @@ using UnityEngine;
 
 public class zoomTap : MonoBehaviour
 {
-    int tapCount;
+    private int tapCount;
     public float MaxDubbleTapTime;
-    float NewTime;
+    private float NewTime;
+    public GameObject Camera;
+    private CameraController cc;
+    private Vector2 lastTouchPos;
+    private float positionRange;
  
     void Start () {
-         tapCount = 0;
-         MaxDubbleTapTime = 0.12f;
+        cc=Camera.GetComponent<CameraController>();
+        tapCount = 0;
+        MaxDubbleTapTime = 0.12f;
+        lastTouchPos = new Vector2(0f,0f);
+        positionRange = 40f;
     }
  
-void Update () {
+    void Update () {
     
-    if (Input.touchCount == 1) {
-        Touch touch = Input.GetTouch (0);
-        Vector2 lastpos = touch.deltaPosition;
-        //Debug.Log(lastpos.magnitude); 
+        if (Input.touchCount == 1) {
+            Touch touch = Input.GetTouch (0);            
+            Debug.Log("Touch Position : " + touch.position); 
+        
+            if ((touch.phase == TouchPhase.Ended) &&
+                (tapCount == 1) &&
+                (touch.position.x>=lastTouchPos.x-positionRange && touch.position.x<=lastTouchPos.x+positionRange) &&
+                (touch.position.y>=lastTouchPos.y-positionRange && touch.position.y<=lastTouchPos.y+positionRange)){
+                tapCount += 1;
+            }
+            else if ((touch.phase == TouchPhase.Ended) && tapCount == 0){
+                tapCount += 1;
+                lastTouchPos = touch.position;
+            }
+        
+            if (tapCount == 1) {
+                NewTime = Time.time + MaxDubbleTapTime;
 
-                
-        if ((touch.phase == TouchPhase.Ended)) {
-            tapCount += 1;
+            }else if(tapCount == 2 && Time.time <= NewTime){
+
+                cc.zoomCamera();
+                tapCount = 0;
+            }
+            //Debug.Log("tap: "+tapCount); 
         }
-    
-        if (tapCount == 1) {
-            NewTime = Time.time + MaxDubbleTapTime;
-
-        }else if(tapCount == 2 && Time.time <= NewTime){
-
-            Debug.Log("Dubble tap"); 
-            tapCount = 0;
+        if (Time.time > NewTime) {
+            tapCount = 0; 
         }
-        Debug.Log("tap: "+tapCount); 
     }
-    if (Time.time > NewTime) {
-        tapCount = 0; 
-    }
-}
 }
 
