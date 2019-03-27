@@ -5,7 +5,7 @@ using UnityEngine;
 public class BtnReact : MonoBehaviour
 {
     public GameObject ActionBtn, BleedingBtn, RABtn, BreathingBtn, CBBtn, PulseBtn, 
-    BlackBtn, RedBtn, GreenBtn, YellowBtn, PriorityBtn, BreathImage;
+    BlackBtn, RedBtn, GreenBtn, YellowBtn, PriorityBtn, BreathImage, White;
     public List<GameObject> actions;
     public List<GameObject> cards;
     public GameObject[] victims;
@@ -89,14 +89,20 @@ public class BtnReact : MonoBehaviour
         Parameters.StopBleeding();       
     }
 
-    public void Breathing(){
+    public void CapillaryBackfill()
+    {
+        Backfill Backfill = White.GetComponent<Backfill>();
+        Backfill.ShowThumb();
+    }
+
+    /*public void Breathing(){
         GameObject victim = getVictim();
         BreathingEffect BreathingEffect = victim.GetComponent<BreathingEffect>();
         Parameters Parameters = victim.GetComponent<Parameters>();
 
         BreathingEffect.BreathEnable();
     }
-
+    */
 }
 
 

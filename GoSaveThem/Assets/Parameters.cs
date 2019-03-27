@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Parameters : MonoBehaviour
 {   
-    public int Bfreq, Pulse;
+    public int Bfreq, Pulse, Backfill;
     public bool Bleeding, AirwaysBlocked, Dead;
     public GameObject Blood;
 
     void Start(){
         Bfreq = 0;
         Pulse = 0;
+        Backfill = 0;
         Bleeding = false;
         AirwaysBlocked = false;
         GiveParameters();
@@ -38,7 +39,10 @@ public class Parameters : MonoBehaviour
             if ( i > 5 ){
                 Bleeding = true;
             }
+
         }
+        //Backfill = Random.Range(500, 5000);
+        Backfill = 5000;
     }
 
     public void StopBleeding(){
