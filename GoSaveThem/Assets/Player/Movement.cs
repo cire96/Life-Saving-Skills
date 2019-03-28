@@ -48,7 +48,7 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log((Mathf.Abs(moveHorizontal) + Mathf.Abs(moveVertical)));
+        //Animation update
         anim.SetFloat("Movement", (Mathf.Abs(moveHorizontal) + Mathf.Abs(moveVertical)));
     }
 
