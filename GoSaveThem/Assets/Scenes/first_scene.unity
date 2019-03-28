@@ -5797,7 +5797,7 @@ MonoBehaviour:
   Bleeding: 0
   AirwaysBlocked: 0
   Dead: 0
-  Blood: {fileID: 0}
+  Blood: {fileID: 1388390963}
 --- !u!1001 &770432235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11026,6 +11026,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.000001, y: 0.000000011175871, z: 5.000001}
   m_Center: {x: -2.5000157, y: 0.0000000055879354, z: -2.4999995}
+--- !u!1 &1388390963 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3988788446221291845, guid: 698bc4283b785444a9f733f6bbd9d430,
+    type: 3}
+  m_PrefabInstance: {fileID: 1779712482}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1392073920
 PrefabInstance:
   m_ObjectHideFlags: 0

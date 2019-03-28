@@ -10,14 +10,16 @@ public class Backfill : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     bool ispressed = false;
     float PressedTime, RefillTime;
     float Delay;
-    public GameObject Thumb, ThumbWhite, Hud;
+    public GameObject Thumb, ThumbWhite, Hud, ThumbBlur;
     Color temp;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
         ThumbWhite.SetActive(false);
+        ThumbBlur.SetActive(false);
         temp = ThumbWhite.GetComponent<Image>().color;
         temp.a = 0.0f;
         ThumbWhite.GetComponent<Image>().color = temp;
@@ -48,6 +50,7 @@ public class Backfill : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public void ShowThumb()
     {
+        ThumbBlur.SetActive(true);
         Thumb.SetActive(true);
         ThumbWhite.SetActive(true);
         BtnReact BtnReact = Hud.GetComponent<BtnReact>();
