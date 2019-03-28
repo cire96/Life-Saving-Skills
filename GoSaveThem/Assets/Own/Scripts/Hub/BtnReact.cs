@@ -5,7 +5,7 @@ using UnityEngine;
 public class BtnReact : MonoBehaviour
 {
     public GameObject ActionBtn, BleedingBtn, RABtn, BreathingBtn, CBBtn, PulseBtn, 
-    BlackBtn, RedBtn, GreenBtn, YellowBtn, PriorityBtn;
+    BlackBtn, RedBtn, GreenBtn, YellowBtn, PriorityBtn, BreathImage;
     public List<GameObject> actions;
     public List<GameObject> cards;
     public GameObject[] victims;
@@ -49,21 +49,52 @@ public class BtnReact : MonoBehaviour
 
     }
 
-    public void GivePriority(string color){
-        Debug.Log("ran fuction");
+    public GameObject getVictim(){
         foreach(GameObject victim in victims){
             Debug.Log("loop..");
             UIAppear UIAppear = victim.transform.Find("Radius").GetComponent<UIAppear>();
             if (UIAppear.active){
-                Debug.Log("found victim");
-                ShowPriority ShowPriority = victim.transform.Find("PriorityCard").GetComponent<ShowPriority>();
-                ShowPriority.UpdatePriority(color);
+                return victim;
             }
+        }
+        return null;
+    }
+
+    public void GivePriority(string color){
+        Debug.Log("ran fuction");
+        GameObject victim= getVictim();
+        if (victim){
+            //Debug.Log("found victim");
+            ShowPriority ShowPriority = victim.transform.Find("PriorityCard").GetComponent<ShowPriority>();
+            ShowPriority.UpdatePriority(color);
         }
     }
 
     public void ChangeScene(){
         
+    }
+
+    public void ReleaseAirways(){
+        GameObject victim = getVictim();
+        Parameters Parameters = victim.GetComponent<Parameters>();
+        // Play animation function
+        Parameters.FreeAirways();
+
+    }
+
+    public void Bleeding(){
+        GameObject victim = getVictim();
+        Parameters Parameters = victim.GetComponent<Parameters>();
+        // Play animation function
+        Parameters.StopBleeding();       
+    }
+
+    public void Breathing(){
+        GameObject victim = getVictim();
+        BreathingEffect BreathingEffect = victim.GetComponent<BreathingEffect>();
+        Parameters Parameters = victim.GetComponent<Parameters>();
+
+        BreathingEffect.BreathEnable();
     }
 
 }
