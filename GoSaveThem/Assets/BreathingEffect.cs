@@ -10,8 +10,8 @@ public class BreathingEffect : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     public GameObject Img;
     public GameObject Hud;
     public GameObject BreathingBlur;
-    bool ispressed = false;
-    double Delay, timeLeft;
+    bool ispressed = false, BreatheIn = false;
+    float Delay, timeLeft;
     float transparency = 1.0f;
     Color temp;
 
@@ -20,6 +20,9 @@ public class BreathingEffect : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     // Start is called before the first frame update
     void Start()
     {
+        temp = Img.GetComponent<Image>().color;
+        temp.a = 0.0f; //Image start with full transparancy
+        Img.GetComponent<Image>().color = temp;
         Img.SetActive(false);
         BreathingBlur.SetActive(false);
     }
@@ -35,9 +38,10 @@ public class BreathingEffect : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        ispressed = true;
+
         startBreathing();
         BreathingBlur.SetActive(true);
+        ispressed = true;
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -45,6 +49,10 @@ public class BreathingEffect : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         Img.SetActive(false);
         BreathingBlur.SetActive(false);
         ispressed = false;
+        temp = Img.GetComponent<Image>().color;
+        temp.a = 0.0f; //Image start with full transparancy
+        Img.GetComponent<Image>().color = temp;
+        BreatheIn = false;
     }
 
 
@@ -56,14 +64,23 @@ public class BreathingEffect : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         if (timeLeft < 0.0f)
         {
             Debug.Log("reseting transparency");
-            timeLeft = Delay;
-            transparency = 1.0f;
+            BreatheIn = !BreatheIn;
+            timeLeft = Delay/2;
+
+        }
+        if (BreatheIn)
+        {
+            transparency -= 2 * Time.deltaTime / Delay;
+            transparency = Mathf.Max(0.0f, transparency);
+        }
+        else
+        {
+            transparency += 2 * Time.deltaTime / Delay;
+            transparency = Mathf.Min(1.0f, transparency);
         }
         Debug.Log(timeLeft);
         temp = Img.GetComponent<Image>().color;
-        transparency = Mathf.Max(0.0f, transparency - 0.02f);
         temp.a = transparency;
-
         Img.GetComponent<Image>().color = temp;
         //BtnReact BtnReact
 
@@ -79,9 +96,16 @@ public class BreathingEffect : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         Parameters Parameters = victim.GetComponent<Parameters>();
 
         int Bfreq = Parameters.Bfreq;
-        Delay = (double)60.0 / Bfreq;
-        timeLeft = Delay;
-        Img.SetActive(true);
+        Delay = 1;
+        if (Bfreq != 0)
+        {
+            Delay = 60.0f / Bfreq;
+            Img.SetActive(true);
+        }
+        timeLeft = Delay / 2;
+
+
+
     }
 
    /* public void BreathEnable(){
