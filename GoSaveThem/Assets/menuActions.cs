@@ -7,17 +7,19 @@ public class menuActions : MonoBehaviour
 {
     public List<GameObject> mainMenuList, playList, soundList, howList, levelList;
     public Image Title, SoundPopUp, LevelPopUp, HowPopUp;
-    public GameObject Disclaimer, StartBtn, SoundBtn, HowBtn, Level1, Level2, Level3, BackBtn, LevelStartBtn, LevelCloseBtn,
-        MusicTxt, MusicSlider, VoicesTxt, VoicesSlider, SaveBtn, CancelBtn, SoundCloseBtn, OkayBtn, HowScrollView, HowCloseBtn, Lock2, Lock3;
+    public GameObject Disclaimer, StartBtn, SoundBtn, HowBtn;
+    public GameObject Level1, Level2, Level3, BackBtn, LevelStartBtn, LevelCancelBtn, Lock2, Lock3;
+    public GameObject MusicTxt, MusicSlider, VoiceTxt, VoiceSlider, SoundSaveBtn, SoundCancelBtn;
+    public GameObject HowScrollView, HowCloseBtn;
 
     // Start is called before the first frame update
     void Start()
     {
         mainMenuList = new List<GameObject>() { StartBtn, SoundBtn, HowBtn };
         playList = new List<GameObject>() { Level1, Level2, Level3, BackBtn, Lock2, Lock3};
-        soundList = new List<GameObject>() { MusicTxt, MusicSlider, VoicesTxt, VoicesSlider, SaveBtn, CancelBtn, SoundCloseBtn };
-        howList = new List<GameObject>() { OkayBtn, HowScrollView, HowCloseBtn };
-        levelList = new List<GameObject>() { LevelStartBtn, LevelCloseBtn };
+        soundList = new List<GameObject>() { MusicTxt, MusicSlider, VoiceTxt, VoiceSlider, SoundSaveBtn, SoundCancelBtn };
+        howList = new List<GameObject>() { HowScrollView, HowCloseBtn };
+        levelList = new List<GameObject>() { LevelStartBtn, LevelCancelBtn };
 
         SoundPopUp.enabled = false;
         LevelPopUp.enabled = false;
@@ -185,5 +187,10 @@ public class menuActions : MonoBehaviour
             levelItem.SetActive(false);
         }
 
+    }
+
+    public void changeScene(string scene)
+    {
+        Application.LoadLevel(scene);
     }
 }
