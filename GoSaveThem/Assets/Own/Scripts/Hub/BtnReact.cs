@@ -5,7 +5,8 @@ using UnityEngine;
 public class BtnReact : MonoBehaviour
 {
     public GameObject ActionBtn, BleedingBtn, RABtn, BreathingBtn, CBBtn, PulseBtn, 
-    BlackBtn, RedBtn, GreenBtn, YellowBtn, PriorityBtn, BreathImage, White;
+        BlackBtn, RedBtn, GreenBtn, YellowBtn, PriorityBtn, BreathImage, White, HowBtn, 
+        HowLayer, HowCloseBtn, MenuLayer, ResumeBtn, SoundBtn, RestartBtn, MenuBtn, MenuBlurEffect, HowBlurEffect;
     public List<GameObject> actions;
     public List<GameObject> cards;
     public GameObject[] victims;
@@ -20,6 +21,9 @@ public class BtnReact : MonoBehaviour
         foreach(GameObject btn in cards){
             btn.SetActive(false);
         }
+
+        MenuLayer.SetActive(false);
+        HowLayer.SetActive(false);
         PriorityBtn.SetActive(false);
         ActionBtn.SetActive(false);
 
@@ -93,6 +97,31 @@ public class BtnReact : MonoBehaviour
     {
         Backfill Backfill = White.GetComponent<Backfill>();
         Backfill.ShowThumb();
+    }
+    public void ShowHowLayer()
+    {
+        HowLayer.SetActive(true);
+        HowBlurEffect.SetActive(true);
+    }
+
+    public void HideHowLayer()
+    {
+        HowLayer.SetActive(false);
+        HowBlurEffect.SetActive(false);
+
+    }
+
+    public void ShowMenuLayer()
+    {
+        MenuLayer.SetActive(true);
+        MenuBlurEffect.SetActive(true);
+
+    }
+
+    public void HideMenuLayer()
+    {
+        MenuLayer.SetActive(false);
+        MenuBlurEffect.SetActive(false);
     }
 
     /*public void Breathing(){
