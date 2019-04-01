@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Parameters : MonoBehaviour
-{   
+{
+    public string prio;   
     public int Bfreq, Pulse, Backfill;
-    public bool Bleeding, AirwaysBlocked, Dead;
+    public bool Bleeding, AirwaysBlocked, Dead, Walking;
     public GameObject Blood;
 
     void Start(){
@@ -14,6 +15,7 @@ public class Parameters : MonoBehaviour
         Backfill = 0;
         Bleeding = false;
         AirwaysBlocked = false;
+        Walking = false;
         GiveParameters();
         
         // Sätter igång blodpartikelsystemt ifall den skadade blöder.
@@ -21,7 +23,56 @@ public class Parameters : MonoBehaviour
     }
 
     void GiveParameters(){
-        int i = Random.Range(1,10);
+
+        // Ta fram en slumpad int, som sedan kan användas till att slumpafram tillstånd. Exempelvis ifall vi
+        // vill ha 20% att någon blöder; if(r < 3): bleed 
+        int r;
+
+        switch (prio) 
+        {
+            case "Black":
+                r = Random.Range(1,10);
+                Dead = true;
+                if (r < 3)
+                    AirwaysBlocked = true;
+                break;
+            case "Green":
+                Walking = true;
+                Bleeding = true;
+                Pulse = Random.Range(60, 120);
+                Bfreq = Random.Range(12,25);
+                // Byt till float?
+                Backfill = Random.Range(0,2);
+                break;
+            case "Yellow":
+                r = Random.Range(1,10);
+                if (r < 6)
+                    Bleeding = true;
+                Bfreq = Random.Range(12,25);
+                Pulse = Random.Range(60, 120);
+                break;
+            case "Red":
+                r = Random.Range(1,10);
+                if (r < 6)
+                    Bleeding = true;
+                r = Random.Range(1,10);
+                if (r < 4){
+                    AirwaysBlocked = true;
+                    Bfreq = 0;
+                } else {
+                    Bfreq = Random.Range(5,45);
+                }
+                // Ifall andningsfrekvensen är normal måste pulsen vara tokig.
+                if ( Bfreq < 30 && Bfreq > 10 ){
+                    Pulse = Random.Range(120,180);
+                } else {
+                    Pulse = Random.Range(60,180);
+                }
+                break;
+        }
+        Blood.SetActive(Bleeding);
+
+        /* int i = Random.Range(1,10);
         if ( i == 1 ){
             Dead = true;
         } else {
@@ -43,6 +94,7 @@ public class Parameters : MonoBehaviour
         }
         //Backfill = Random.Range(500, 5000);
         Backfill = 5000;
+        */
     }
 
     public void StopBleeding(){
