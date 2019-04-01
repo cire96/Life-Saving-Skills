@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class menuActions : MonoBehaviour
@@ -191,6 +192,6 @@ public class menuActions : MonoBehaviour
 
     public void changeScene(string scene)
     {
-        Application.LoadLevel(scene);
+        SceneManager.LoadScene(scene);
     }
 }
