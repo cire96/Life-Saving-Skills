@@ -5,64 +5,118 @@ using UnityEngine.SceneManagement;
 
 public class BtnReact : MonoBehaviour
 {
-    public GameObject ActionBtn, BleedingBtn, RABtn, BreathingBtn, CBBtn, PulseBtn, 
-        BlackBtn, RedBtn, GreenBtn, YellowBtn, PriorityBtn, BreathImage, White, HowBtn, 
-        HowLayer, HowCloseBtn, MenuLayer, ResumeBtn, SoundBtn, RestartBtn, MenuBtn, MenuBlurEffect, HowBlurEffect, GameOverLayer, GameOverBlurEffect,
-        MissionAccomplishedBlurEffect, MissionAccomplishedLayer, SoundLayer, SoundBlurEffect, MisAccRestartBtn, MisAccGoToMenuBtn, GameOverRestartBtn, GameOverGoToMenuBtn;
-    public List<GameObject> actions;
-    public List<GameObject> cards;
+    public GameObject BreathImage, White, HowBtn, MenuBtn;
+
+    public GameObject SoundLayer, SoundBlurEffect;
+    public GameObject HowLayer, HowCloseBtn, HowBlurEffect;
+    public GameObject MisAccRestartBtn, MisAccGoToMenuBtn, MisAccBlurEffect, MisAccLayer;
+    public GameObject GameOverLayer, GameOverBlurEffect, GameOverRestartBtn, GameOverGoToMenuBtn;
+    public GameObject MenuResumeBtn, MenuSoundBtn, MenuRestartBtn, MenuBlurEffect, MenuLayer;
+    public GameObject BlackBtn, RedBtn, GreenBtn, YellowBtn;
+    public GameObject BleedingBtn, RABtn, BreathingBtn, CBBtn, PulseBtn;
+    public GameObject TripleBot, TripleMid, TripleTop, TripleBtnBg, TripleBtnClose;
+    public GameObject CommTalkBtn, CommFinishBtn;
+
+    public List<GameObject> VictimActions; //x
+    public List<GameObject> MenuActions; //x 
+    public List<GameObject> GameOverActions; //x
+    public List<GameObject> MisAccActions; //x
+    public List<GameObject> HowActions; //x
+    public List<GameObject> SoundActions; //x
+    public List<GameObject> CommunicationActions; //x
+    public List<GameObject> CardActions; //x
+    public List<GameObject> TripleActions; //x
+
     public GameObject[] victims;
 
-
     void Start(){
-        actions = new List<GameObject>(){BleedingBtn, RABtn, BreathingBtn, PulseBtn, CBBtn};
-        cards = new List<GameObject>(){BlackBtn,GreenBtn,RedBtn,YellowBtn};
-        foreach(GameObject btn in actions){
-            btn.SetActive(false);
-        }
-        foreach(GameObject btn in cards){
-            btn.SetActive(false);
-        }
+        VictimActions = new List<GameObject>(){BleedingBtn, RABtn, BreathingBtn, PulseBtn, CBBtn};
+        CardActions = new List<GameObject>(){BlackBtn,GreenBtn,RedBtn,YellowBtn};
+        TripleActions = new List<GameObject>() { TripleBot, TripleMid, TripleTop, TripleBtnBg };
+        MenuActions = new List<GameObject>() { MenuResumeBtn, MenuSoundBtn, MenuRestartBtn, MenuBlurEffect, MenuLayer };
+        GameOverActions = new List<GameObject>() { GameOverLayer, GameOverBlurEffect, GameOverRestartBtn, GameOverGoToMenuBtn };
+        MisAccActions = new List<GameObject>() { MisAccRestartBtn, MisAccGoToMenuBtn, MisAccBlurEffect, MisAccLayer };
+        HowActions = new List<GameObject>() { HowLayer, HowCloseBtn, HowBlurEffect };
+        SoundActions = new List<GameObject>() { SoundLayer, SoundBlurEffect };
+        CommunicationActions = new List<GameObject>() { CommTalkBtn, CommFinishBtn };
 
-        MenuLayer.SetActive(false);
-        HowLayer.SetActive(false);
-        SoundLayer.SetActive(false);
-        GameOverLayer.SetActive(false);
-        MissionAccomplishedLayer.SetActive(false);
+        HideThis(VictimActions);
+        HideThis(CardActions);
+        HideThis(MenuActions);
+        HideThis(SoundActions);
+        HideThis(GameOverActions);
+        HideThis(MisAccActions);
+        HideThis(HowActions);
 
-       
-        PriorityBtn.SetActive(false);
-        ActionBtn.SetActive(false);
+        ShowThis(TripleActions);
+        TripleBtnToggle(false);
 
         victims = GameObject.FindGameObjectsWithTag("Victim");
     }
 
-    public void Action(){
-        foreach(GameObject btn in actions){
-            btn.SetActive(true);
+    public void HideThis(List<GameObject> ItemList)
+    {
+        foreach (GameObject Item in ItemList)
+        {
+            Item.SetActive(false);
         }
-        foreach(GameObject btn in cards){
-            btn.SetActive(false);
-        }
-        ActionBtn.SetActive(false);
-        PriorityBtn.SetActive(true);
     }
 
-    public void Priority(){
-        foreach(GameObject btn in actions){
-            btn.SetActive(false);
+    public void ShowThis(List<GameObject> ItemList)
+    {
+        foreach (GameObject Item in ItemList)
+        {
+            Item.SetActive(true);
         }
-        foreach(GameObject btn in cards){
-            btn.SetActive(true);
+    }
+
+    public void TripleBtnToggle(bool IsClicked)
+    {
+        if (IsClicked)
+        {
+            HideThis(TripleActions);
+            TripleBtnClose.SetActive(true);
         }
-        ActionBtn.SetActive(true);
-        PriorityBtn.SetActive(false);
+        else
+        {
+            ShowThis(TripleActions);
+            TripleBtnClose.SetActive(false);
+            HideThis(VictimActions);
+            HideThis(CommunicationActions);
+            HideThis(CardActions);
+        }
+    }
+
+    public void TripleBtnPressed(string ThisBtn)
+    {
+        if (ThisBtn == "BotBtn")
+        {
+            ShowThis(VictimActions);
+            TripleBtnToggle(true);
+        }
+        else if (ThisBtn == "MidBtn")
+        {
+            ShowThis(CardActions);
+            TripleBtnToggle(true);
+        }
+        else if (ThisBtn == "TopBtn")
+        {
+            ShowThis(CommunicationActions);
+            TripleBtnToggle(true);
+        }
 
     }
+
+
+
+
+
+
+
+
 
     public GameObject getVictim(){
         foreach(GameObject victim in victims){
-            Debug.Log("loop..");
             UIAppear UIAppear = victim.transform.Find("Radius").GetComponent<UIAppear>();
             if (UIAppear.active){
                 return victim;
@@ -75,7 +129,6 @@ public class BtnReact : MonoBehaviour
         Debug.Log("ran fuction");
         GameObject victim= getVictim();
         if (victim){
-            //Debug.Log("found victim");
             ShowPriority ShowPriority = victim.transform.Find("PriorityCard").GetComponent<ShowPriority>();
             ShowPriority.UpdatePriority(color);
         }
@@ -114,82 +167,55 @@ public class BtnReact : MonoBehaviour
 
     public void ShowHowLayer()
     {
-        HowLayer.SetActive(true);
-        HowBlurEffect.SetActive(true);
+        ShowThis(HowActions);
     }
 
     public void HideHowLayer()
     {
-        HowLayer.SetActive(false);
-        HowBlurEffect.SetActive(false);
+        HideThis(HowActions);
 
     }
 
     public void ShowMenuLayer()
     {
-        MenuLayer.SetActive(true);
-        MenuBlurEffect.SetActive(true);
+        ShowThis(MenuActions);
 
     }
 
     public void HideMenuLayer()
     {
-        MenuLayer.SetActive(false);
-        MenuBlurEffect.SetActive(false);
+        HideThis(MenuActions);
     }
 
     public void ShowGameOverLayer()
     {
-        GameOverLayer.SetActive(true);
-        GameOverBlurEffect.SetActive(true);
-        GameOverRestartBtn.SetActive(true);
-        GameOverGoToMenuBtn.SetActive(true);
+        ShowThis(GameOverActions);
     }
 
     public void HideGameOverLayer()
     {
-        GameOverLayer.SetActive(false);
-        GameOverBlurEffect.SetActive(false);
-        GameOverRestartBtn.SetActive(false);
-        GameOverGoToMenuBtn.SetActive(false);
+        HideThis(GameOverActions);
     }
 
     public void ShowMissionAccomplishedLayer()
     {
-        MissionAccomplishedLayer.SetActive(true);
-        MissionAccomplishedBlurEffect.SetActive(true);
-        MisAccRestartBtn.SetActive(true);
-        MisAccGoToMenuBtn.SetActive(true);
+        ShowThis(MisAccActions);
     }
 
     public void HideMissionAccomplishedLayer()
     {
-        MissionAccomplishedLayer.SetActive(false);
-        MissionAccomplishedBlurEffect.SetActive(false);
-        MisAccRestartBtn.SetActive(false);
-        MisAccGoToMenuBtn.SetActive(false);
+        HideThis(MisAccActions);
     }
 
     public void ShowSoundLayer()
     {
-        SoundLayer.SetActive(true);
-        SoundBlurEffect.SetActive(true);
+        ShowThis(SoundActions);
     }
 
     public void HideSoundLayer()
     {
-        SoundLayer.SetActive(false);
-        SoundBlurEffect.SetActive(false);
+        HideThis(SoundActions);
     }
-
-    /*public void Breathing(){
-        GameObject victim = getVictim();
-        BreathingEffect BreathingEffect = victim.GetComponent<BreathingEffect>();
-        Parameters Parameters = victim.GetComponent<Parameters>();
-
-        BreathingEffect.BreathEnable();
-    }
-    */
 }
 
 
