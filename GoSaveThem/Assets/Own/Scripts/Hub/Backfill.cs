@@ -18,8 +18,8 @@ public class Backfill : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     // Start is called before the first frame update
     void Start()
     {
-        ThumbWhite.SetActive(false);
-        ThumbBlur.SetActive(false);
+        //ThumbWhite.SetActive(false);
+        //ThumbBlur.SetActive(false);
         temp = ThumbWhite.GetComponent<Image>().color;
         temp.a = 0.0f;
         ThumbWhite.GetComponent<Image>().color = temp;
@@ -40,6 +40,7 @@ public class Backfill : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
         else if(temp.a>0)
         {
+            Debug.Log(Time.deltaTime);
             RefillTime -= Time.deltaTime;
             temp.a = Mathf.Max(RefillTime / Delay, 0.0f);
             ThumbWhite.GetComponent<Image>().color = temp;
