@@ -16777,12 +16777,6 @@ RectTransform:
   m_AnchoredPosition: {x: -294, y: 176}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &925712827 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1937401110322061180, guid: 51d4002bd37164504aead2e90205f7fc,
-    type: 3}
-  m_PrefabInstance: {fileID: 1267028374}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &929950159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25847,12 +25841,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.3655212, y: 1.6393872, z: 4.968236}
   m_Center: {x: -0.0000019073486, y: 1.0645186, z: 0.04167092}
---- !u!1 &1395609749 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1937401110370834546, guid: 51d4002bd37164504aead2e90205f7fc,
-    type: 3}
-  m_PrefabInstance: {fileID: 1267028374}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1398430701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25933,6 +25921,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.0000057, y: 0.29999137, z: 5}
   m_Center: {x: -2.5000086, y: -0.080299154, z: -2.5}
+--- !u!114 &1402835843 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4326854716276273124, guid: bccda636a29074a3aa5bfd9028e59a86,
+    type: 3}
+  m_PrefabInstance: {fileID: 1161297307}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa72e41fffa324e7c865c487eb3596b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1402988348 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 421550, guid: 29c6f824a8087b549a0a0b68c7810a06,
@@ -27726,7 +27726,6 @@ GameObject:
   - component: {fileID: 1506611160}
   - component: {fileID: 1506611159}
   - component: {fileID: 1506611158}
-  - component: {fileID: 1506611157}
   - component: {fileID: 1506611156}
   m_Layer: 5
   m_Name: CommFinishBtn
@@ -27747,21 +27746,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6366ee97f6b541449155028b9487355a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1506611157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1506611155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0567d6040943e944e8300eb2dd43e1c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Img: {fileID: 925712827}
-  Hud: {fileID: 2139734834}
-  BreathingBlur: {fileID: 1395609749}
 --- !u!114 &1506611158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33700,7 +33684,6 @@ GameObject:
   - component: {fileID: 1877911611}
   - component: {fileID: 1877911610}
   - component: {fileID: 1877911609}
-  - component: {fileID: 1877911608}
   - component: {fileID: 1877911607}
   m_Layer: 5
   m_Name: CommTalkBtn
@@ -33741,21 +33724,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6366ee97f6b541449155028b9487355a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1877911608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1877911605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0567d6040943e944e8300eb2dd43e1c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Img: {fileID: 925712827}
-  Hud: {fileID: 2139734834}
-  BreathingBlur: {fileID: 1395609749}
 --- !u!114 &1877911609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33796,8 +33764,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1117830206}
-        m_MethodName: Breathing
+      - m_Target: {fileID: 1402835843}
+        m_MethodName: Talk
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -12,7 +12,7 @@ public class Parameters : MonoBehaviour
     void Start(){
         Bfreq = 0;
         Pulse = 0;
-        Backfill = 0;
+        Backfill = 0;       //i sekunder
         Bleeding = false;
         AirwaysBlocked = false;
         Walking = false;
@@ -42,7 +42,7 @@ public class Parameters : MonoBehaviour
                 Pulse = Random.Range(60, 120);
                 Bfreq = Random.Range(12,25);
                 // Byt till float?
-                Backfill = Random.Range(0,2);
+                Backfill = Random.Range(1,5);
                 break;
             case "Yellow":
                 r = Random.Range(1,10);
@@ -50,6 +50,7 @@ public class Parameters : MonoBehaviour
                     Bleeding = true;
                 Bfreq = Random.Range(12,25);
                 Pulse = Random.Range(60, 120);
+                Backfill = Random.Range(1, 5);
                 break;
             case "Red":
                 r = Random.Range(1,10);
@@ -68,6 +69,7 @@ public class Parameters : MonoBehaviour
                 } else {
                     Pulse = Random.Range(60,180);
                 }
+                Backfill = Random.Range(1, 5);
                 break;
         }
         Blood.SetActive(Bleeding);

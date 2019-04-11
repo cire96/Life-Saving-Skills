@@ -40,10 +40,14 @@ public class Backfill : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
         else if(temp.a>0)
         {
-            Debug.Log(Time.deltaTime);
+
             RefillTime -= Time.deltaTime;
+            Debug.Log(temp.a);
+            Debug.Log(Delay);
             temp.a = Mathf.Max(RefillTime / Delay, 0.0f);
+            Debug.Log(temp.a);
             ThumbWhite.GetComponent<Image>().color = temp;
+            Debug.Log(temp);
         }
 
 
@@ -58,7 +62,8 @@ public class Backfill : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         GameObject victim = BtnReact.getVictim();
         Parameters Parameters = victim.GetComponent<Parameters>();
 
-        Delay = Parameters.Backfill/1000; //converting to seconds from miliseconds
+        Delay = Parameters.Backfill; //backfill in seconds
+        Debug.Log(Delay);
  
     }
 
