@@ -22911,6 +22911,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TripleBtnBg NotUsed
       objectReference: {fileID: 0}
+    - target: {fileID: 1937401110322061180, guid: 51d4002bd37164504aead2e90205f7fc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1937401111611548646, guid: 51d4002bd37164504aead2e90205f7fc,
         type: 3}
       propertyPath: m_IsActive
@@ -23304,11 +23309,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 1.3375
-      objectReference: {fileID: 0}
-    - target: {fileID: 1937401110322061180, guid: 51d4002bd37164504aead2e90205f7fc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1937401110799574187, guid: 51d4002bd37164504aead2e90205f7fc,
         type: 3}
@@ -27769,7 +27769,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506611155}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -33763,7 +33763,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1877911605}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
