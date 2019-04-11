@@ -13,6 +13,7 @@ public class TakePulse : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     double Delay, timeLeft;
     float transparency = 1.0f;
    	Color temp;
+    int Pulse = 0;
     
     // Start is called before the first frame update
     void Start () {
@@ -21,7 +22,7 @@ public class TakePulse : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     }
     void Update()
     {
-        if (ispressed){
+        if (ispressed && Pulse != 0){
             PulsateBlood();
         }
         // DO SOMETHING HERE
@@ -56,9 +57,10 @@ public class TakePulse : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         
         BloodyScreen.GetComponent<Image>().color = temp;
         //BtnReact BtnReact
-  
-        
-        
+        BloodyScreen.SetActive(true);   //kan vara dumt att göra SetActive här? Görs isf i varje frame update...
+
+
+
     }
     void startPulsation(){
     	//BtnReact BtnReact
@@ -66,9 +68,9 @@ public class TakePulse : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         GameObject victim = BtnReact.getVictim();
         Parameters Parameters = victim.GetComponent<Parameters>();
 
-        int Pulse = Parameters.Pulse;
+        Pulse = Parameters.Pulse;
         Delay = (double)60.0 / Pulse;
         timeLeft = Delay;
-        BloodyScreen.SetActive(true);
+        //BloodyScreen.SetActive(true);
     }
 }
