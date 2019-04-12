@@ -8,12 +8,12 @@ public class zoomTap : MonoBehaviour
     public float MaxDubbleTapTime;
     private float NewTime;
     public GameObject Camera;
-    private CameraController cc;
+    private PlayerCameraController cc;
     private Vector2 lastTouchPos;
     private float positionRange;
  
     void Start () {
-        cc=Camera.GetComponent<CameraController>();
+        cc=Camera.GetComponent<PlayerCameraController>();
         tapCount = 0;
         MaxDubbleTapTime = 0.12f;
         lastTouchPos = new Vector2(0f,0f);
