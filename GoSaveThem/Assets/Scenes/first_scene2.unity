@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -581,17 +581,17 @@ PrefabInstance:
     - target: {fileID: 4081680214247455948, guid: 7cc5375a235064c508efd4b15ea572df,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.88
+      value: -24
       objectReference: {fileID: 0}
     - target: {fileID: 4081680214247455948, guid: 7cc5375a235064c508efd4b15ea572df,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.3
+      value: 5.3
       objectReference: {fileID: 0}
     - target: {fileID: 4081680214247455948, guid: 7cc5375a235064c508efd4b15ea572df,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -32.28
+      value: -180.2
       objectReference: {fileID: 0}
     - target: {fileID: 4081680214247455948, guid: 7cc5375a235064c508efd4b15ea572df,
         type: 3}
@@ -8342,7 +8342,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 701310279}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.1472367
+  m_Size: 0.2944735
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -22905,11 +22905,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TripleBtnBg NotUsed
       objectReference: {fileID: 0}
-    - target: {fileID: 1937401110322061180, guid: 51d4002bd37164504aead2e90205f7fc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1937401111611548646, guid: 51d4002bd37164504aead2e90205f7fc,
         type: 3}
       propertyPath: m_IsActive
@@ -23090,6 +23085,11 @@ PrefabInstance:
       propertyPath: CommFinishBtn
       value: 
       objectReference: {fileID: 1506611155}
+    - target: {fileID: 1937401110322061180, guid: 51d4002bd37164504aead2e90205f7fc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1937401112233912950, guid: 51d4002bd37164504aead2e90205f7fc,
         type: 3}
       propertyPath: m_LocalPosition.x

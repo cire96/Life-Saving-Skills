@@ -62,7 +62,7 @@ public class BreathingEffect : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         timeLeft -= Time.deltaTime;
         if (timeLeft < 0.0f)
         {
-            Debug.Log("reseting transparency");
+            //Debug.Log("reseting transparency");
             BreatheIn = !BreatheIn;
             timeLeft = Delay/2;
 
@@ -77,7 +77,7 @@ public class BreathingEffect : MonoBehaviour, IPointerDownHandler, IPointerUpHan
             transparency += 2 * Time.deltaTime / Delay;
             transparency = Mathf.Min(1.0f, transparency);
         }
-        Debug.Log(timeLeft);
+        //Debug.Log(timeLeft);
         temp = Img.GetComponent<Image>().color;
         temp.a = transparency;
         Img.GetComponent<Image>().color = temp;

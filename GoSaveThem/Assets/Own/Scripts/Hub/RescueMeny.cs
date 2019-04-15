@@ -62,7 +62,6 @@ public class RescueMeny : MonoBehaviour
         {
             TalkImage.SetActive(true);
             TalkImageActive = true;
-            Debug.Log("Picture");
         }
 
     }

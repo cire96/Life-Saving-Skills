@@ -46,11 +46,11 @@ public class TakePulse : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     	
     	timeLeft -= Time.deltaTime;
     	if (timeLeft < 0.0f){
-    		Debug.Log("reseting transparency");
+    		//Debug.Log("reseting transparency");
     		timeLeft = Delay;
     		transparency = 1.0f;
     	}
-    	Debug.Log(timeLeft);
+    	//Debug.Log(timeLeft);
         temp = BloodyScreen.GetComponent<Image>().color;
         transparency = Mathf.Max(0.0f, transparency - 0.02f);
         temp.a = transparency;

@@ -12,7 +12,6 @@ public class Spawn : MonoBehaviour
     void Awake()
     {
         foreach ( GameObject s in GameObject.FindGameObjectsWithTag("Spawn") ){
-            Debug.Log("i");
             spawnPoints.Add(s);
         }
 
@@ -44,7 +43,7 @@ public class Spawn : MonoBehaviour
 
     void SpawnV( string prio ){
         int index = Random.Range( 0, (spawnPoints.Count - 1) );
-        Debug.Log(spawnPoints.Count);
+        //Debug.Log(spawnPoints.Count);
         GameObject spawn = spawnPoints[index];
         spawnPoints.RemoveAt(index);
         GameObject victim = Instantiate(victimPrefab, spawn.transform.position, spawn.transform.rotation);
