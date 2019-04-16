@@ -24,7 +24,7 @@ public class zoomTap : MonoBehaviour
     
         if (Input.touchCount == 1) {
             Touch touch = Input.GetTouch (0);            
-            Debug.Log("Touch Position : " + touch.position); 
+            //Debug.Log("Touch Position : " + touch.position); 
         
             if ((touch.phase == TouchPhase.Ended) &&
                 (tapCount == 1) &&

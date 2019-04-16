@@ -51,7 +51,8 @@ public class BtnReact : MonoBehaviour
         ShowThis(TripleActions);
         TripleBtnToggle(false);
 
-        victims = GameObject.FindGameObjectsWithTag("Victim");
+       
+
     }
 
     public void HideThis(List<GameObject> ItemList)
@@ -116,7 +117,7 @@ public class BtnReact : MonoBehaviour
 
 
     public GameObject getVictim(){
-        foreach(GameObject victim in victims){
+        foreach(GameObject victim in GameObject.FindGameObjectsWithTag("Victim")){
             UIAppear UIAppear = victim.transform.Find("Radius").GetComponent<UIAppear>();
             if (UIAppear.active){
                 return victim;
@@ -126,7 +127,6 @@ public class BtnReact : MonoBehaviour
     }
 
     public void GivePriority(string color){
-        Debug.Log("ran fuction");
         GameObject victim= getVictim();
         if (victim){
             ShowPriority ShowPriority = victim.transform.Find("PriorityCard").GetComponent<ShowPriority>();

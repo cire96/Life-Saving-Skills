@@ -26,6 +26,6 @@ public class PointCount : MonoBehaviour
     void countPoints(){
 
         victimParam=victims[0].GetComponent<Parameters>();
-        Debug.Log(victimParam.Bfreq);
+        //Debug.Log(victimParam.Bfreq);
     }
 }

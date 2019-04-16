@@ -12,9 +12,9 @@ public class BreathingEffect : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     public GameObject BreathingBlur;
     bool ispressed = false, BreatheIn = false;
     float Delay, timeLeft;
-    float transparency = 1.0f;
+    float transparency = 0.0f;  //var tidigare 1.0f men ser bättre ut att börja genomskinlig
     Color temp;
-
+    int Bfreq = 0;
 
     //private bool active = false;
     // Start is called before the first frame update
@@ -29,7 +29,7 @@ public class BreathingEffect : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
     void Update()
     {
-        if (ispressed)
+        if (ispressed && Bfreq != 0)
         {
             PulsateFog();
         }
@@ -59,11 +59,10 @@ public class BreathingEffect : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
     void PulsateFog()
     {
-
         timeLeft -= Time.deltaTime;
         if (timeLeft < 0.0f)
         {
-            Debug.Log("reseting transparency");
+            //Debug.Log("reseting transparency");
             BreatheIn = !BreatheIn;
             timeLeft = Delay/2;
 
@@ -78,11 +77,12 @@ public class BreathingEffect : MonoBehaviour, IPointerDownHandler, IPointerUpHan
             transparency += 2 * Time.deltaTime / Delay;
             transparency = Mathf.Min(1.0f, transparency);
         }
-        Debug.Log(timeLeft);
+        //Debug.Log(timeLeft);
         temp = Img.GetComponent<Image>().color;
         temp.a = transparency;
         Img.GetComponent<Image>().color = temp;
         //BtnReact BtnReact
+        Img.SetActive(true);
 
 
 
@@ -95,12 +95,12 @@ public class BreathingEffect : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         GameObject victim = BtnReact.getVictim();
         Parameters Parameters = victim.GetComponent<Parameters>();
 
-        int Bfreq = Parameters.Bfreq;
+        Bfreq = Parameters.Bfreq;
         Delay = 1;
         if (Bfreq != 0)
         {
             Delay = 60.0f / Bfreq;
-            Img.SetActive(true);
+            //Img.SetActive(true);
         }
         timeLeft = Delay / 2;
 

@@ -18,8 +18,8 @@ public class Backfill : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     // Start is called before the first frame update
     void Start()
     {
-        ThumbWhite.SetActive(false);
-        ThumbBlur.SetActive(false);
+        //ThumbWhite.SetActive(false);
+        //ThumbBlur.SetActive(false);
         temp = ThumbWhite.GetComponent<Image>().color;
         temp.a = 0.0f;
         ThumbWhite.GetComponent<Image>().color = temp;
@@ -33,16 +33,21 @@ public class Backfill : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             PressedTime += Time.deltaTime;
             temp.a = Mathf.Min(PressedTime / 2, 1.0f);//2 seconds until white
-            Debug.Log("changing alpha");
+            //Debug.Log("changing alpha");
             ThumbWhite.GetComponent<Image>().color = temp;
 
 
         }
         else if(temp.a>0)
         {
+
             RefillTime -= Time.deltaTime;
+            //Debug.Log(temp.a);
+            //Debug.Log(Delay);
             temp.a = Mathf.Max(RefillTime / Delay, 0.0f);
+            //Debug.Log(temp.a);
             ThumbWhite.GetComponent<Image>().color = temp;
+            //Debug.Log(temp);
         }
 
 
@@ -55,9 +60,11 @@ public class Backfill : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         ThumbWhite.SetActive(true);
         BtnReact BtnReact = Hud.GetComponent<BtnReact>();
         GameObject victim = BtnReact.getVictim();
+        //Debug.Log(victim);
         Parameters Parameters = victim.GetComponent<Parameters>();
 
-        Delay = Parameters.Backfill/1000; //converting to seconds from miliseconds
+        Delay = Parameters.Backfill; //backfill in seconds
+        //Debug.Log(Delay);
  
     }
 
