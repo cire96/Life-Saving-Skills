@@ -2,31 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PointCount : MonoBehaviour
 {
     // Start is called before the first frame update
     public int Points;
     public GameObject[] victims;
-    private Parameters victimParam;
+    public Parameters victimParam;
     void Start()
     {   
-
-        //victimGroup = GameObject.Find("VictumGroup");
-        Points=0;
-        victims = GameObject.FindGameObjectsWithTag("Victim");
-        
+        Points=0;        
     }
 
     // Update is called once per frame
     void Update()
     {
-        countPoints();
+        //countPoints();
     }
 
-    void countPoints(){
+    public void countPoints(){
+        victims = GameObject.FindGameObjectsWithTag("Victim");
         foreach (GameObject victim in victims){
-            Parameters victimParam=victim.GetComponent<Parameters>();
-            Debug.Log(victimParam);
+            victimParam=victim.GetComponent<Parameters>();
+            Dictionary<string, object> ParamDic = victimParam.getParamHash();
+            Debug.Log(ParamDic["prio"]+" : "+ParamDic["SetPrio"]);
         }
     }
 }

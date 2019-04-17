@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Parameters : MonoBehaviour
 {
     public string prio, SetPrio;   
@@ -114,5 +115,17 @@ public class Parameters : MonoBehaviour
             Bfreq = Random.Range(5,60);
             AirwaysBlocked = false;
         }
+    }
+
+    public Dictionary<string,object> getParamHash(){
+        Dictionary<string, object> ParamDic = new Dictionary<string, object>();
+        ParamDic.Add("prio",prio);ParamDic.Add("SetPrio",SetPrio);
+        ParamDic.Add("Bfreq",Bfreq);
+        ParamDic.Add("Pulse",Pulse);
+        ParamDic.Add("Backfill",Backfill);
+        ParamDic.Add("Bleeding",Bleeding);
+        ParamDic.Add("AirwaysBlocked",AirwaysBlocked);
+        ParamDic.Add("Dead",Dead);ParamDic.Add("Walking",Walking);
+        return ParamDic;
     }
 }
