@@ -127,8 +127,10 @@ public class BtnReact : MonoBehaviour
     }
 
     public void GivePriority(string color){
-        GameObject victim= getVictim();
+        GameObject victim = getVictim();
         if (victim){
+            Parameters Parameters = victim.GetComponent<Parameters>();
+            Parameters.SetPrioColor(color);
             ShowPriority ShowPriority = victim.transform.Find("PriorityCard").GetComponent<ShowPriority>();
             ShowPriority.UpdatePriority(color);
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Parameters : MonoBehaviour
 {
-    public string prio;   
+    public string prio, SetPrio;   
     public int Bfreq, Pulse, Backfill;
     public bool Bleeding, AirwaysBlocked, Dead, Walking;
     public GameObject Blood;
@@ -16,10 +16,15 @@ public class Parameters : MonoBehaviour
         Bleeding = false;
         AirwaysBlocked = false;
         Walking = false;
+        SetPrio = "unset";
         GiveParameters();
         
         // Sätter igång blodpartikelsystemt ifall den skadade blöder.
         Blood.SetActive(Bleeding);
+    }
+
+    public void SetPrioColor(string color){
+        SetPrio=color;
     }
 
     void GiveParameters(){
