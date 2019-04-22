@@ -35,6 +35,7 @@ public class PointCount : MonoBehaviour
     }
 
     public void countPoints(){
+        int numSaved=0;
         Points += timeFactor*countdownScript.getTimeLeft();
         victims = GameObject.FindGameObjectsWithTag("Victim");
         foreach (GameObject victim in victims){
@@ -46,6 +47,7 @@ public class PointCount : MonoBehaviour
             }
             else if((string)ParamDic["SetPrio"]==ParamDic["prio"].ToString().ToLower()){
                 Debug.Log("Correct");
+                numSaved += 1;
                 Points += correctTriagePoint; 
             }
             else if ((string)ParamDic["SetPrio"] != ParamDic["prio"].ToString().ToLower())
@@ -56,6 +58,6 @@ public class PointCount : MonoBehaviour
             //Debug.Log(ParamDic["prio"]+" : "+ParamDic["SetPrio"]);
         }
         Debug.Log("Points: " + Points);
-        Points = 0;
+        Points = 0;//Return Points here and numSaved
     }
 }

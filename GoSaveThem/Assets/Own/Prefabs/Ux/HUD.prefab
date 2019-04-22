@@ -1387,7 +1387,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 701310279}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.1472367
+  m_Size: 0.2944735
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4408,8 +4408,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1937401111860968016}
-        m_MethodName: Breathing
+      - m_Target: {fileID: 16602562, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
+        m_MethodName: countPoints
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4895,7 +4895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HUD: {fileID: 1937401111860968019}
-  timeLeft: 60
+  timeLeft: 120
   countdownTxt: {fileID: 1675175750}
 --- !u!1 &1681815892
 GameObject:

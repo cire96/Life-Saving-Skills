@@ -2547,9 +2547,10 @@ GameObject:
   - component: {fileID: 1449249109}
   - component: {fileID: 1449249108}
   - component: {fileID: 1449249107}
+  - component: {fileID: 16602562}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2616,8 +2617,8 @@ Rigidbody:
   m_GameObject: {fileID: 1449249106}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 10
-  m_AngularDrag: 0
+  m_Drag: 7
+  m_AngularDrag: 5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -2633,10 +2634,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5002432
-  m_Height: 2
+  m_Radius: 0.3
+  m_Height: 1.79
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.89, z: 0}
 --- !u!114 &1449249107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2651,7 +2652,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5000
   rb: {fileID: 1449249109}
-  anim: {fileID: 0}
+  anim: {fileID: 1449249110}
+--- !u!114 &16602562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449249106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2361e27f5321a4ad09b0656344e4c847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Points: 0
+  victims: []
+  victimParam: {fileID: 0}
+  HUD: {fileID: 1937401111860968019, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
 --- !u!1 &1484786528
 GameObject:
   m_ObjectHideFlags: 0
