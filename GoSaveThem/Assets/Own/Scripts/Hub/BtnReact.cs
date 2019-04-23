@@ -181,12 +181,15 @@ public class BtnReact : MonoBehaviour
     public void ShowMenuLayer()
     {
         ShowThis(MenuActions);
+        Time.timeScale = 0; //Pausa spelet och tiden
 
     }
 
     public void HideMenuLayer()
     {
         HideThis(MenuActions);
+        Time.timeScale = 1; //Starta spelet och tiden
+
     }
 
     public void ShowGameOverLayer()
