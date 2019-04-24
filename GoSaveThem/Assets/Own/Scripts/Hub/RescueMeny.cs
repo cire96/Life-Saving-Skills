@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class RescueMeny : MonoBehaviour
 {
-
-    public GameObject FinishBtn, TalkBtn, TalkImage;
+    public GameObject HUD;
+    GameObject FinishBtn, TalkBtn, TalkImage, CommunicationLayer;
     public List<GameObject> actions;
     public bool active;
     public bool TalkImageActive = false;
 
     void Start()
     {
+        CommunicationLayer = HUD.transform.Find("CommunicationLayer").gameObject;
+        TalkBtn = CommunicationLayer.transform.Find("CommTalkBtn").gameObject;
+        FinishBtn = CommunicationLayer.transform.Find("CommFinishBtn").gameObject;
+        TalkImage = HUD.transform.Find("TalkImage").gameObject;
+
         actions = new List<GameObject>() { FinishBtn, TalkBtn };
         active = false;
         foreach (GameObject btn in actions)
@@ -50,6 +55,11 @@ public class RescueMeny : MonoBehaviour
 
 
         }
+    }
+
+    public bool GetActive()
+    {
+        return active;
     }
 
     public void Talk()

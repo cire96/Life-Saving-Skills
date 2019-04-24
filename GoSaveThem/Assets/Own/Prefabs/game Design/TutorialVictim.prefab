@@ -1431,7 +1431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d04d7c2658e6c48b7833d8c4491e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HUD: {fileID: 1937401111860968019, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
+  HUD: {fileID: 1937401111860968019, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
   VictimActions: []
   CardActions: []
   TripleActions: []
@@ -3065,7 +3065,7 @@ GameObject:
   - component: {fileID: 4081680213572435523}
   - component: {fileID: 4081680213572435522}
   m_Layer: 0
-  m_Name: Victim
+  m_Name: TutorialVictim
   m_TagString: Victim
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

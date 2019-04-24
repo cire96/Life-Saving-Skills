@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class menuActions : MonoBehaviour
 {
-    public List<GameObject> mainMenuList, playList, soundList, howList, levelList;
+    public List<GameObject> mainMenuList, playList, soundList, howList, levelList, levelNumList;
     public Image Title, SoundPopUp, LevelPopUp, HowPopUp;
     public GameObject Disclaimer, StartBtn, SoundBtn, HowBtn;
-    public GameObject Level1, Level2, Level3, BackBtn, LevelStartBtn, LevelCancelBtn, Lock2, Lock3;
+    public GameObject Level1, Level2, Level3, BackBtn, Level1StartBtn, Level2StartBtn, LevelCancelBtn, Lock3, LevelNumber1, LevelNumber2;
     public GameObject MusicTxt, MusicSlider, VoiceTxt, VoiceSlider, SoundSaveBtn, SoundCancelBtn;
     public GameObject HowScrollView, HowCloseBtn;
 
@@ -17,10 +17,11 @@ public class menuActions : MonoBehaviour
     void Start()
     {
         mainMenuList = new List<GameObject>() { StartBtn, SoundBtn, HowBtn };
-        playList = new List<GameObject>() { Level1, Level2, Level3, BackBtn, Lock2, Lock3};
+        playList = new List<GameObject>() { Level1, Level2, Level3, BackBtn, Lock3};
         soundList = new List<GameObject>() { MusicTxt, MusicSlider, VoiceTxt, VoiceSlider, SoundSaveBtn, SoundCancelBtn };
         howList = new List<GameObject>() { HowScrollView, HowCloseBtn };
-        levelList = new List<GameObject>() { LevelStartBtn, LevelCancelBtn };
+        levelList = new List<GameObject>() { Level1StartBtn, Level2StartBtn, LevelCancelBtn };
+        levelNumList = new List<GameObject>() { LevelNumber1, LevelNumber2 };
 
         SoundPopUp.enabled = false;
         LevelPopUp.enabled = false;
@@ -42,9 +43,13 @@ public class menuActions : MonoBehaviour
         foreach (GameObject levelItem in levelList) {
             levelItem.SetActive(false);
         }
+        foreach (GameObject levelNum in levelNumList)
+        {
+            levelNum.SetActive(false);
+        }
     }
 
-    public void playButton()
+    public void PlayButton()
     {
         Title.enabled = false;
         SoundPopUp.enabled = false;
@@ -73,7 +78,7 @@ public class menuActions : MonoBehaviour
         }
     }
 
-    public void backButton()
+    public void BackButton()
     {
         SoundPopUp.enabled = false;
         LevelPopUp.enabled = false;
@@ -100,9 +105,13 @@ public class menuActions : MonoBehaviour
         {
             levelItem.SetActive(false);
         }
+        foreach (GameObject levelNum in levelNumList)
+        {
+            levelNum.SetActive(false);
+        }
     }
 
-    public void soundButton()
+    public void SoundButton()
     {
         SoundPopUp.enabled = true;
         LevelPopUp.enabled = false;
@@ -131,7 +140,7 @@ public class menuActions : MonoBehaviour
         }
     }
 
-    public void levelButton()
+    public void LevelButton(int levelNumber)
     {
         SoundPopUp.enabled = false;
         LevelPopUp.enabled = true;
@@ -154,13 +163,24 @@ public class menuActions : MonoBehaviour
         {
             howItem.SetActive(false);
         }
-        foreach (GameObject levelItem in levelList)
+
+        LevelCancelBtn.SetActive(true);
+
+        if (levelNumber == 1)
         {
-            levelItem.SetActive(true);
+            LevelNumber1.SetActive(true);
+            Level1StartBtn.SetActive(true);
+
+        }
+        else if (levelNumber == 2)
+        {
+            LevelNumber2.SetActive(true);
+            Level2StartBtn.SetActive(true);
+
         }
     }
 
-    public void howButton()
+    public void HowButton()
     {
         SoundPopUp.enabled = false;
         LevelPopUp.enabled = false;
@@ -190,7 +210,7 @@ public class menuActions : MonoBehaviour
 
     }
 
-    public void changeScene(string scene)
+    public void ChangeScene(string scene)
     {
         SceneManager.LoadScene(scene);
     }
