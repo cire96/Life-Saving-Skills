@@ -8,7 +8,7 @@ public class Countdown : MonoBehaviour
 {
     public GameObject HUD;
     private BtnReact BtnReactor;
-    public int timeLeft = 60;
+    public int timeLeft = 120;
     public Text countdownTxt;
 
     // Use this for initialization
@@ -37,4 +37,9 @@ public class Countdown : MonoBehaviour
             BtnReactor.ShowGameOverLayer();
         }
     }
+
+    public int getTimeLeft() {
+        return timeLeft;
+    }
+
 }
