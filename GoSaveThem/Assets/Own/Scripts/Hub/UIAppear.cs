@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIAppear : MonoBehaviour
 {
-    public GameObject HUD;
+    GameObject HUD;
     public List<GameObject> VictimActions;
     public List<GameObject> CardActions;
     public List<GameObject> TripleActions;
@@ -13,6 +13,8 @@ public class UIAppear : MonoBehaviour
         BleedingBtn, RABtn, CBBtn, BreathingBtn, PulseBtn, BlackBtn, RedBtn, GreenBtn, YellowBtn;
 
     void Start(){
+
+        HUD = GameObject.FindGameObjectWithTag("HUD");
 
         TripleBtnLayer = HUD.transform.Find("TripleBtnLayer").gameObject;
         TripleBtnClose = TripleBtnLayer.transform.Find("TripleBtnClose").gameObject;
@@ -65,5 +67,10 @@ public class UIAppear : MonoBehaviour
                 btn.SetActive(false);
             }
          }
+    }
+
+    public bool GetActive()
+    {
+        return active;
     }
 }
