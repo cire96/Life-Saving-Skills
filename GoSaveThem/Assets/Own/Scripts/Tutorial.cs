@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Tutorial : MonoBehaviour
 {
-    public GameObject HUD, Victim;
-    GameObject RescueLeader, RescueRadius;
-    GameObject TutorialViews, StartingContainer, CommunicateContainer, FinishContainer, PauseContainer;
-    GameObject HowContainer, ScoreContainer, BreathingContainer, PulseContainer, CBContainer;
+    public GameObject HUD, Victim, VictimRadius;
+    GameObject RescueLeader, RescueRadius, MarkVictimContainer;
+    GameObject TutorialViews, StartingContainer, CommunicateContainer, FinishContainer, PauseContainer, DoneContainer, CloseActionsContainer;
+    GameObject HowContainer, ScoreContainer, BreathingContainer, PulseContainer, CBContainer, RAContainer, BleedingContainer;
     public List<GameObject> TutorialList;
 
     bool NotShownCommunicate = true;
+    bool NotShownVictim = true;
 
 
     // Use this for initialization
@@ -19,8 +20,9 @@ public class Tutorial : MonoBehaviour
     {
         RescueLeader = GameObject.FindGameObjectWithTag("RescueLeader");
         RescueRadius = RescueLeader.transform.Find("Radius").gameObject;
-        Victim = GameObject.FindGameObjectWithTag("Victim");
 
+        Victim = GameObject.FindGameObjectWithTag("Victim");
+        VictimRadius = Victim.transform.Find("Radius").gameObject;
 
         TutorialViews = HUD.transform.Find("TutorialViews").gameObject;
         StartingContainer = TutorialViews.transform.Find("StartingContainer").gameObject;
@@ -32,15 +34,19 @@ public class Tutorial : MonoBehaviour
         BreathingContainer = TutorialViews.transform.Find("BreathingContainer").gameObject;
         PulseContainer = TutorialViews.transform.Find("PulseContainer").gameObject;
         CBContainer = TutorialViews.transform.Find("CBContainer").gameObject;
+        RAContainer = TutorialViews.transform.Find("RAContainer").gameObject;
+        BleedingContainer = TutorialViews.transform.Find("BleedingContainer").gameObject;
+        DoneContainer = TutorialViews.transform.Find("DoneContainer").gameObject;
+        CloseActionsContainer = TutorialViews.transform.Find("CloseActionsContainer").gameObject;
+        MarkVictimContainer = TutorialViews.transform.Find("MarkVictimContainer").gameObject;
 
-        TutorialList = new List<GameObject>() { StartingContainer, CommunicateContainer, FinishContainer, PauseContainer, HowContainer, ScoreContainer, BreathingContainer, PulseContainer, CBContainer };
+        TutorialList = new List<GameObject>() { StartingContainer, CommunicateContainer, FinishContainer, PauseContainer, HowContainer, ScoreContainer, BreathingContainer, PulseContainer, CBContainer, RAContainer, BleedingContainer, DoneContainer, CloseActionsContainer, MarkVictimContainer };
 
         CloseAll();
 
         Victim.SetActive(false);
         StartingContainer.SetActive(true);
-
-
+        Time.timeScale = 0;
     }
 
     // Update is called once per frame
@@ -50,6 +56,7 @@ public class Tutorial : MonoBehaviour
         {
             item.SetActive(false);
         }
+        Time.timeScale = 1;
     }
 
     public void CloseCommunicate()
@@ -80,25 +87,84 @@ public class Tutorial : MonoBehaviour
     {
         ScoreContainer.SetActive(false);
         Victim.SetActive(true);
+        Time.timeScale = 1;
+    }
+
+    public void CloseBleeding()
+    {
+        BleedingContainer.SetActive(false);
+        BreathingContainer.SetActive(true);
+    }
+
+    public void CloseBreathing()
+    {
+        BreathingContainer.SetActive(false);
+        PulseContainer.SetActive(true);
+    }
+
+    public void ClosePulse()
+    {
+        PulseContainer.SetActive(false);
+        RAContainer.SetActive(true);
+    }
+
+    public void CloseRA()
+    {
+        RAContainer.SetActive(false);
+        CBContainer.SetActive(true);
+    }
+
+    public void CloseCB()
+    {
+        CBContainer.SetActive(false);
+        CloseActionsContainer.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void CloseActions()
+    {
+        CloseActionsContainer.SetActive(false);
+        MarkVictimContainer.SetActive(true);
+        Time.timeScale = 1;
+
+    }
+
+    public void CloseMarkVictim()
+    {
+        MarkVictimContainer.SetActive(false);
+        DoneContainer.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void ShowCommunicate()
     {
-
         if (RescueRadius.GetComponent<RescueMeny>().GetActive() && NotShownCommunicate)
         {
             CommunicateContainer.SetActive(true);
             NotShownCommunicate = false;
+            Time.timeScale = 0;
         } 
         else if (!RescueRadius.GetComponent<RescueMeny>().GetActive() && !NotShownCommunicate) {
             CommunicateContainer.SetActive(false);
         }
-
     }
 
+    public void EnteredVictimArea()
+    {
+        if (VictimRadius.GetComponent<UIAppear>().GetActive() && NotShownVictim)
+        {
+            BleedingContainer.SetActive(true);
+            NotShownVictim = false;
+        }
+        else if (!VictimRadius.GetComponent<UIAppear>().GetActive() && !NotShownVictim)
+        {
+            BleedingContainer.SetActive(false);
+        }
+    }
 
     void Update()
     {
         ShowCommunicate();
+        EnteredVictimArea();
     }
 }
