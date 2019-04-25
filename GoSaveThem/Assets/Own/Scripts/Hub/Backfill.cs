@@ -73,7 +73,7 @@ public class Backfill : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
 
         ispressed = true;
-        PressedTime = 0.0f;
+        PressedTime = ThumbWhite.GetComponent<Image>().color.a * 2;
     }
 
     public void OnPointerUp(PointerEventData eventData)
