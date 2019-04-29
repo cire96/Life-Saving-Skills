@@ -10,7 +10,7 @@ public class PointCount : MonoBehaviour
     public int Points;
     public int PointRatio;
     public GameObject[] victims;
-    public Parameters victimParam;
+    Parameters victimParam;
     public GameObject HUD;
     public List<GameObject> GameOverList, StarList;
     GameObject GameOverLayer, GameOverBlurEffect, GameOverRestartBtn, GameOverMenuBtn, GameOverBg, GameOverStats;
@@ -96,17 +96,22 @@ public class PointCount : MonoBehaviour
         PointsTxt.text = Points.ToString();
         LevelTxt.text = "1"; //Behöver göras dynamisk när vi har fler levels
 
-        PointRatio = 80; //Kvot för nuv. poäng genom tot. möjliga poäng * 100
-
-        if (PointRatio > 50) {
+        if(Points<=0){
+            PointRatio=0;
+        }else{
+            PointRatio = Points; //Kvot för nuv. poäng genom tot. möjliga poäng * 100
+        }
+        int starCapPoint = victims.Length*correctTriagePoint;
+        Debug.Log(PointRatio + " : " +starCapPoint);
+        if (PointRatio > starCapPoint*0.25f) {
             Star1.SetActive(true);
         }
 
-        if (PointRatio > 75) {
+        if (PointRatio > starCapPoint*0.5f) {
             Star2.SetActive(true);
         }
 
-        if (PointRatio > 95) {
+        if (PointRatio >= starCapPoint) {
             Star3.SetActive(true);
         }
 
