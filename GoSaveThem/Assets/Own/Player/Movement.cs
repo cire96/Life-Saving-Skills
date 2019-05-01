@@ -46,6 +46,7 @@ public class Movement : MonoBehaviour
 
     }
 
+
     private void Update()
     {
         //Animation update
@@ -53,7 +54,13 @@ public class Movement : MonoBehaviour
     }
 
 
+    public void CrouchMovment(){
+        anim.SetTrigger("crouchTrigger");
+    }
 
+    public void TalkMovment(){
+        anim.SetTrigger("TalkTrigger");
+    }
 
     // Animation footing methods (rpg animations are read only)
     public void FootR()
