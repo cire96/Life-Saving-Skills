@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class Parameters : MonoBehaviour
 {
-    public string prio, SetPrio;   
+    public string prio , SetPrio;   
     public int Bfreq, Pulse, Backfill;
     public bool Bleeding, AirwaysBlocked, Dead, Walking;
     public GameObject Blood;
+    public bool CheckedPulse = false, CheckedBfreq = false, CheckedBackfill = false, UnnecessaryTourniquet = false, UnnecessaryAirwaysReleased = false;
 
     void Start(){
         Bfreq = 0;
@@ -106,14 +107,23 @@ public class Parameters : MonoBehaviour
     }
 
     public void StopBleeding(){
+        if (Bleeding == false)
+        {
+            UnnecessaryTourniquet = true;
+        }
         Bleeding = false;
         Blood.SetActive(Bleeding);
     }
 
     public void FreeAirways(){
-        if ( !Dead && AirwaysBlocked ){
-            Bfreq = Random.Range(5,60);
+        if ( AirwaysBlocked ){
             AirwaysBlocked = false;
+            if (!Dead)
+            {
+                Bfreq = Random.Range(5, 60);
+            }
+        } else {
+            UnnecessaryAirwaysReleased = true;
         }
     }
 
@@ -126,6 +136,11 @@ public class Parameters : MonoBehaviour
         ParamDic.Add("Bleeding",Bleeding);
         ParamDic.Add("AirwaysBlocked",AirwaysBlocked);
         ParamDic.Add("Dead",Dead);ParamDic.Add("Walking",Walking);
+        ParamDic.Add("CheckedPulse", CheckedPulse);
+        ParamDic.Add("CheckedBfreq", CheckedBfreq);
+        ParamDic.Add("CheckedBackfill", CheckedBackfill);
+        ParamDic.Add("UnnecessaryTourniquet", UnnecessaryTourniquet);
+        ParamDic.Add("UnnecessaryAirwaysReleased", UnnecessaryAirwaysReleased);
         return ParamDic;
     }
 }
