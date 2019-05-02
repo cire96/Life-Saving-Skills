@@ -2548,6 +2548,7 @@ GameObject:
   - component: {fileID: 1449249108}
   - component: {fileID: 1449249107}
   - component: {fileID: 16602562}
+  - component: {fileID: 16602568}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2666,9 +2667,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Points: 0
+  PointRatio: 0
   victims: []
-  victimParam: {fileID: 0}
-  HUD: {fileID: 1937401111860968019, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
+  HUD: {fileID: 0}
+  GameOverList: []
+  StarList: []
+--- !u!114 &16602568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449249106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5450f4205cbd4175bd68a584c177fc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HUD: {fileID: 0}
 --- !u!1 &1484786528
 GameObject:
   m_ObjectHideFlags: 0
