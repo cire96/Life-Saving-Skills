@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class BtnReact : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class BtnReact : MonoBehaviour
     public GameObject BleedingBtn, RABtn, BreathingBtn, CBBtn, PulseBtn;
     public GameObject TripleBot, TripleMid, TripleTop, TripleBtnBg, TripleBtnClose;
     public GameObject CommTalkBtn, CommFinishBtn;
+    public GameObject Tourniquit;
+    GameObject textTourniquit;
 
     public List<GameObject> VictimActions; //x
     public List<GameObject> MenuActions; //x 
@@ -29,6 +32,8 @@ public class BtnReact : MonoBehaviour
 
     public GameObject[] victims;
 
+    public int numTourniquets;
+
     void Start(){
         VictimActions = new List<GameObject>(){BleedingBtn, RABtn, BreathingBtn, PulseBtn, CBBtn};
         CardActions = new List<GameObject>(){BlackBtn,GreenBtn,RedBtn,YellowBtn};
@@ -39,6 +44,7 @@ public class BtnReact : MonoBehaviour
         HowActions = new List<GameObject>() { HowLayer, HowCloseBtn, HowBlurEffect };
         SoundActions = new List<GameObject>() { SoundLayer, SoundBlurEffect };
         CommunicationActions = new List<GameObject>() { CommTalkBtn, CommFinishBtn };
+
 
         HideThis(VictimActions);
         HideThis(CardActions);
@@ -51,6 +57,8 @@ public class BtnReact : MonoBehaviour
         ShowThis(TripleActions);
         TripleBtnToggle(false);
 
+        textTourniquit = Tourniquit.transform.Find("numOf").gameObject;
+        textTourniquit.GetComponent<TextMeshProUGUI>().text = numTourniquets.ToString(); 
        
 
     }
@@ -145,10 +153,15 @@ public class BtnReact : MonoBehaviour
     }
 
     public void Bleeding(){
-        GameObject victim = getVictim();
-        Parameters Parameters = victim.GetComponent<Parameters>();
-        // Play animation function
-        Parameters.StopBleeding();       
+        if(numTourniquets>0){
+            GameObject victim = getVictim();
+            Parameters Parameters = victim.GetComponent<Parameters>();
+            // Play animation function
+            Parameters.StopBleeding();  
+            numTourniquets-=1; 
+            textTourniquit.GetComponent<TextMeshProUGUI>().text= numTourniquets.ToString(); 
+             
+        }//do something else
     }
 
     public void CapillaryBackfill()
