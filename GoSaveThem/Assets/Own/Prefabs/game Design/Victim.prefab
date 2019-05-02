@@ -1065,7 +1065,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4081680212667678657}
-  m_LocalRotation: {x: 0.6443777, y: 0.024462728, z: -0.0047377087, w: 0.7643013}
+  m_LocalRotation: {x: 0.6443777, y: 0.02446273, z: -0.0047377087, w: 0.76430136}
   m_LocalPosition: {x: -0.39930904, y: 7.105427e-17, z: 7.9936054e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1127,7 +1127,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4081680212700564481}
-  m_LocalRotation: {x: 0.44257322, y: -0.5567966, z: -0.47898102, w: 0.514474}
+  m_LocalRotation: {x: 0.44257328, y: -0.55679667, z: -0.47898108, w: 0.51447403}
   m_LocalPosition: {x: -0, y: 0.8762761, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1431,7 +1431,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d04d7c2658e6c48b7833d8c4491e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HUD: {fileID: 1937401111860968019, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
   VictimActions: []
   CardActions: []
   TripleActions: []
@@ -1900,7 +1899,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4081680213033438174}
-  m_LocalRotation: {x: -0.5785476, y: 0.63248587, z: -0.35251343, w: -0.37547135}
+  m_LocalRotation: {x: -0.5785476, y: 0.6324858, z: -0.35251343, w: -0.3754713}
   m_LocalPosition: {x: -0.058011726, y: -0.041914478, z: -0.07447154}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3118,7 +3117,7 @@ Animator:
   m_GameObject: {fileID: 4081680213572435532}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 4a5a8c8ff5d6d2e48ab8d2b27100cf57, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d0aeecb441a56ebd594472762519a263, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -4194,7 +4193,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4081680214171754520}
-  m_LocalRotation: {x: 0.6324858, y: 0.57854754, z: 0.37547135, w: -0.3525134}
+  m_LocalRotation: {x: 0.63248587, y: 0.57854754, z: 0.37547138, w: -0.3525134}
   m_LocalPosition: {x: -0.05801534, y: -0.04191418, z: 0.0744715}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
