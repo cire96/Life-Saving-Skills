@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -433,18 +433,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aac09a2118cd8fa4ca12c971e6391574, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &16602568 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 16602568, guid: ec95a1a47dd89419384a3c77769251f9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1950132148}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 16602561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5450f4205cbd4175bd68a584c177fc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &22168006
@@ -18738,6 +18726,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 1937401111860968019, guid: 51d4002bd37164504aead2e90205f7fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: HUD
+      objectReference: {fileID: 0}
     - target: {fileID: 1937401112233912950, guid: 51d4002bd37164504aead2e90205f7fc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18847,19 +18840,64 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 16602562}
-    - target: {fileID: 1506611158, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+    - target: {fileID: 1877911609, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1877911609, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 16602568}
+      objectReference: {fileID: 0}
+    - target: {fileID: 1877911609, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1877911609, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1877911609, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 16602563}
+    - target: {fileID: 1877911609, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: TalkMovment
+      objectReference: {fileID: 0}
+    - target: {fileID: 1877911609, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937401111870326160, guid: 51d4002bd37164504aead2e90205f7fc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937401111870326160, guid: 51d4002bd37164504aead2e90205f7fc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937401111870326160, guid: 51d4002bd37164504aead2e90205f7fc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1937401111870326160, guid: 51d4002bd37164504aead2e90205f7fc,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 16602563}
+    - target: {fileID: 1937401111870326160, guid: 51d4002bd37164504aead2e90205f7fc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CrouchMovment
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937401111870326160, guid: 51d4002bd37164504aead2e90205f7fc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 846159317, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -18898,7 +18936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 35518339, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -2.6801147
+      value: -0.37478638
       objectReference: {fileID: 0}
     - target: {fileID: 35518339, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -28153,10 +28191,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 16602568, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
-      propertyPath: HUD
-      value: 
-      objectReference: {fileID: 1184959225}
+    - target: {fileID: 658454124, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1823748364, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
 --- !u!1001 &1953784909
