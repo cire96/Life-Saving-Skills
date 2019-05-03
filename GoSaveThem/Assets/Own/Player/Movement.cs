@@ -8,6 +8,9 @@ public class Movement : MonoBehaviour
     public Rigidbody rb;
     public Animator anim;
     
+
+
+    private float Freeze = 0.0f;
     private float moveHorizontal;
     private float moveVertical;
     private Vector3 movement;
@@ -29,7 +32,13 @@ public class Movement : MonoBehaviour
     {
         moveHorizontal = joystick.Horizontal + Input.GetAxis("Horizontal");
         moveVertical = joystick.Vertical + Input.GetAxis("Vertical");
-  
+        
+        if (Freeze > 0){
+            moveHorizontal = 0.0f;
+            moveVertical = 0.0f;
+            Freeze -= Time.deltaTime;
+        }
+
         movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         rb.AddForce(movement*speed*Time.deltaTime);
 
@@ -56,6 +65,7 @@ public class Movement : MonoBehaviour
 
     public void CrouchMovment(){
         anim.SetTrigger("crouchTrigger");
+        Freeze = 2.5f;
     }
 
     public void TalkMovment(){

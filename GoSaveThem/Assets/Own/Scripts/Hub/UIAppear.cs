@@ -5,6 +5,7 @@ using UnityEngine;
 public class UIAppear : MonoBehaviour
 {
     GameObject HUD;
+    private GameObject ring;
     public List<GameObject> VictimActions;
     public List<GameObject> CardActions;
     public List<GameObject> TripleActions;
@@ -38,11 +39,15 @@ public class UIAppear : MonoBehaviour
         CardActions = new List<GameObject>() { BlackBtn, GreenBtn, RedBtn, YellowBtn };
         TripleActions = new List<GameObject>() { TripleBotBtn, TripleMidBtn, TripleTopBtn };
         active = false;
+        Debug.Log(transform.childCount);
+        ring = transform.GetChild(0).gameObject;
     }
 
     void OnTriggerEnter (Collider other) {
         if (other.tag =="Player") {
     	    active = true;
+            ring.SetActive(true);
+
             foreach(GameObject action in VictimActions){
                 action.SetActive(true);
             }
@@ -59,6 +64,7 @@ public class UIAppear : MonoBehaviour
     void OnTriggerExit (Collider other) {
         if (other.tag =="Player") {
         	active = false;
+            ring.SetActive(false);
             TripleBtnDisabled.SetActive(true);
             foreach (GameObject btn in VictimActions){
                 btn.SetActive(false);
