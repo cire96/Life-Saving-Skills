@@ -87,20 +87,26 @@ public class PointCount : MonoBehaviour
                 Debug.Log("incorrect");
                 Points -= incorrectTriagePenelty;
             }
+            if((bool)ParamDic["Bleeding"]==true){
+                Debug.Log("Bleeding");
+                Points -= incorrectTriagePenelty;
+            }
             //Debug.Log(ParamDic["prio"]+" : "+ParamDic["SetPrio"]);
         }
         foreach (GameObject item in GameOverList)
         {
             item.SetActive(true);
         }
-        PointsTxt.text = Points.ToString();
-        LevelTxt.text = "1"; //Behöver göras dynamisk när vi har fler levels
+        //Behöver göras dynamisk när vi har fler levels
 
         if(Points<=0){
             PointRatio=0;
         }else{
             PointRatio = Points; //Kvot för nuv. poäng genom tot. möjliga poäng * 100
         }
+
+        PointsTxt.text = PointRatio.ToString();
+        LevelTxt.text = "1";
         int starCapPoint = victims.Length*correctTriagePoint;
         Debug.Log(PointRatio + " : " +starCapPoint);
         if (PointRatio > starCapPoint*0.25f) {
