@@ -11,7 +11,8 @@ public class PlayerCameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
-        transform.position = new Vector3(-5.07f, 2.51f, -52.4f);
+        transform.position = new Vector3(-4.49f, 3.53f, -55f);
+        //transform.position = new Vector3(-5.07f, 2.51f, -52.4f);
         offset = transform.position - player.transform.position;
         outZoomed = true;
     }
