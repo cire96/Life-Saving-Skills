@@ -10,6 +10,7 @@ public class UIAppear : MonoBehaviour
     public List<GameObject> CardActions;
     public List<GameObject> TripleActions;
     public bool active;
+    public bool tutorialVictim;
     GameObject TripleBtnLayer, TripleBtnClose, TripleMidBtn, TripleTopBtn, TripleBotBtn, TripleBtnDisabled,
         BleedingBtn, RABtn, CBBtn, BreathingBtn, PulseBtn, BlackBtn, RedBtn, GreenBtn, YellowBtn;
 
@@ -41,12 +42,18 @@ public class UIAppear : MonoBehaviour
         active = false;
         Debug.Log(transform.childCount);
         ring = transform.GetChild(0).gameObject;
+       
+        ring.SetActive(tutorialVictim);
+        
     }
 
     void OnTriggerEnter (Collider other) {
         if (other.tag =="Player") {
     	    active = true;
+
+            if(!tutorialVictim){
             ring.SetActive(true);
+            }
 
             foreach(GameObject action in VictimActions){
                 action.SetActive(true);
@@ -64,7 +71,9 @@ public class UIAppear : MonoBehaviour
     void OnTriggerExit (Collider other) {
         if (other.tag =="Player") {
         	active = false;
+            if(!tutorialVictim){
             ring.SetActive(false);
+            }
             TripleBtnDisabled.SetActive(true);
             foreach (GameObject btn in VictimActions){
                 btn.SetActive(false);

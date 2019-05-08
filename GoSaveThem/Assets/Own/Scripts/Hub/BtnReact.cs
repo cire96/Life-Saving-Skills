@@ -33,6 +33,9 @@ public class BtnReact : MonoBehaviour
     public GameObject[] victims;
 
     public int numTourniquets;
+    public bool tutorialHud;
+    public GameObject tutorialViews;
+    public Tutorial tutorialViewsScript;
 
     void Start(){
         VictimActions = new List<GameObject>(){BleedingBtn, RABtn, BreathingBtn, PulseBtn, CBBtn};
@@ -55,11 +58,15 @@ public class BtnReact : MonoBehaviour
         HideThis(HowActions);
 
         ShowThis(TripleActions);
-        TripleBtnToggle(false);
+        //TripleBtnToggle(false);
 
         textTourniquit = Tourniquit.transform.Find("numOf").gameObject;
         textTourniquit.GetComponent<TextMeshProUGUI>().text = numTourniquets.ToString(); 
        
+        if(tutorialHud){
+           //tutorialViews = transform.Find("TutorialViews").gameObject;
+           tutorialViewsScript = tutorialViews.GetComponent<Tutorial>();
+        }
 
     }
 
@@ -85,9 +92,13 @@ public class BtnReact : MonoBehaviour
         {
             HideThis(TripleActions);
             TripleBtnClose.SetActive(true);
+            
         }
         else
         {
+            if(tutorialHud){
+                tutorialViewsScript.IsXClicked();
+            }
             ShowThis(TripleActions);
             TripleBtnClose.SetActive(false);
             HideThis(VictimActions);
@@ -105,6 +116,9 @@ public class BtnReact : MonoBehaviour
         }
         else if (ThisBtn == "MidBtn")
         {
+            if(tutorialHud){
+                tutorialViewsScript.IsMarkClicked();
+            }
             ShowThis(CardActions);
             TripleBtnToggle(true);
         }
@@ -141,6 +155,9 @@ public class BtnReact : MonoBehaviour
             Parameters.SetPrioColor(color);
             ShowPriority ShowPriority = victim.transform.Find("PriorityCard").GetComponent<ShowPriority>();
             ShowPriority.UpdatePriority(color);
+            if(tutorialHud){
+                tutorialViewsScript.IsVictimMarked();
+            }
         }
     }
 
