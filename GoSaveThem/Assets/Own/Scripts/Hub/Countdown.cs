@@ -42,4 +42,9 @@ public class Countdown : MonoBehaviour
         return timeLeft;
     }
 
+    public void ResetTimeLeft()
+    {
+        timeLeft = 0;
+    }
+
 }

@@ -18,6 +18,7 @@ public class Movement : MonoBehaviour
     private Vector3 movement;
     private Vector3 angleVelocity;
     private GameObject GoS;
+    private Countdown countDown;
 
     protected Joystick joystick;
     
@@ -57,8 +58,17 @@ public class Movement : MonoBehaviour
             GoS = HUD.transform.Find("GameOverLayer").gameObject;
             GameObject Feedback = GoS.transform.Find("Feedback").gameObject;
             Text txtField = Feedback.GetComponent<Text>();
-            txtField.text = "Be aware of hazards";
+            txtField.text = "Be aware of hazards!";
+            //BtnReact.ShowGameOverLayer();
+
+            //countDown = HUD.GetComponent<Countdown>();
+            GameObject counter = HUD.transform.Find("countdownTxt").gameObject;
+            //countDown.ResetTimeLeft();
+            counter.GetComponent<Countdown>().ResetTimeLeft();
+            //countDown.timeLeft = 0;
             BtnReact.ShowGameOverLayer();
+
+
         }
     }
 
