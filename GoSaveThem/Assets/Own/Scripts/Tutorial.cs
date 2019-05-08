@@ -14,7 +14,7 @@ public class Tutorial : MonoBehaviour
     bool NotShownVictim = true;
     bool NotClickedX = true;
     bool NotClickedMark = true;
-    bool IsNotMarked = true;
+    public bool IsNotMarked = true;
     bool NotShowingPopUp = true;
 
     // Use this for initialization
@@ -257,7 +257,12 @@ public class Tutorial : MonoBehaviour
         }
     }
 
-void Update()
+    public bool getIsNotMarked()
+    {
+        return IsNotMarked;
+    }
+
+    void Update()
     {
         ShowCommunicate();
         EnteredVictimArea();

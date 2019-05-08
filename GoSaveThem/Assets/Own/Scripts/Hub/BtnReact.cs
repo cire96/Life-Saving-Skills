@@ -36,6 +36,8 @@ public class BtnReact : MonoBehaviour
     public bool tutorialHud;
     public GameObject tutorialViews;
     public Tutorial tutorialViewsScript;
+    public PointCount pointCountScript;
+    public Feedback feedbackScript;
 
     void Start(){
         VictimActions = new List<GameObject>(){BleedingBtn, RABtn, BreathingBtn, PulseBtn, CBBtn};
@@ -61,13 +63,15 @@ public class BtnReact : MonoBehaviour
         //TripleBtnToggle(false);
 
         textTourniquit = Tourniquit.transform.Find("numOf").gameObject;
-        textTourniquit.GetComponent<TextMeshProUGUI>().text = numTourniquets.ToString(); 
-       
-        if(tutorialHud){
+        textTourniquit.GetComponent<TextMeshProUGUI>().text = numTourniquets.ToString();
+        pointCountScript = GameObject.FindWithTag("Player").GetComponent<PointCount>();
+        feedbackScript = GameObject.FindWithTag("Player").GetComponent<Feedback>();
+
+        if (tutorialHud){
            //tutorialViews = transform.Find("TutorialViews").gameObject;
            tutorialViewsScript = tutorialViews.GetComponent<Tutorial>();
-        }
-
+           }
+        Debug.Log(tutorialHud);
     }
 
     public void HideThis(List<GameObject> ItemList)
@@ -128,6 +132,28 @@ public class BtnReact : MonoBehaviour
             TripleBtnToggle(true);
         }
 
+    }
+
+    public void FinishMission()
+    {
+        Debug.Log(tutorialHud);
+        if(tutorialHud)
+        {
+            if(tutorialViewsScript.getIsNotMarked())
+            {
+                Debug.Log("Not marked");
+            }
+            else
+            {
+                pointCountScript.countPoints();
+                feedbackScript.GiveFeedback();
+            }
+        }
+        else
+        {
+            pointCountScript.countPoints();
+            feedbackScript.GiveFeedback();
+        }
     }
 
 
