@@ -1,26 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
     public float speed;
+    public GameObject HUD;
     public Rigidbody rb;
     public Animator anim;
-    
 
-
+    private BtnReact BtnReact;
     private float Freeze = 0.0f;
     private float moveHorizontal;
+    private bool alive = true;
     private float moveVertical;
     private Vector3 movement;
     private Vector3 angleVelocity;
+    private GameObject GoS;
 
     protected Joystick joystick;
     
     // Start is called before the first frame update
     void Start()
-    {   
+    {
+        BtnReact = HUD.GetComponent<BtnReact>();
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         //rb.constraints = RigidbodyConstraints.FreezePositionY;
@@ -48,12 +52,20 @@ public class Movement : MonoBehaviour
         }
 
         //angleVelocity = new Vector3(0.0f, moveHorizontal, 0.0f);
-        
+        if (!(Freeze > 0) && !alive)
+        {
+            GoS = HUD.transform.Find("GameOverLayer").gameObject;
+            GameObject Feedback = GoS.transform.Find("Feedback").gameObject;
+            Text txtField = Feedback.GetComponent<Text>();
+            txtField.text = "Be aware of hazards";
+            BtnReact.ShowGameOverLayer();
+        }
+    }
 
         //Quaternion deltaRotation = Quaternion.Euler(angleVelocity * Time.deltaTime);
         //rb.MoveRotation(rb.rotation * deltaRotation);
 
-    }
+    
 
 
     private void Update()
@@ -70,6 +82,16 @@ public class Movement : MonoBehaviour
 
     public void TalkMovment(){
         anim.SetTrigger("TalkTrigger");
+    }
+
+    public void Die(){
+        Debug.Log("U died");
+        alive = false;
+        //anim.SetTrigger("DieTrigger");
+        Freeze = 2.5f;
+  
+
+
     }
 
     // Animation footing methods (rpg animations are read only)

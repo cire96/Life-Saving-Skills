@@ -29,7 +29,7 @@ public class Countdown : MonoBehaviour
     {
         while (timeLeft > 0)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1); //Använt time.DeltaTime vid tidigare tillfällen
             timeLeft--;
         }
         if (timeLeft == 0)
