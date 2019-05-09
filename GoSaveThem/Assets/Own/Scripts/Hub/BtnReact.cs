@@ -28,71 +28,7 @@ public class BtnReact : MonoBehaviour {
     public PointCount pointCountScript;
     public Feedback feedbackScript;
 
-    // --------------- TUTORIAL START --------------------------------
-    public GameObject Victim, VictimRadius;
-    public GameObject RescueLeader, RescueRadius, MarkVictimContainer;
-    public GameObject TutorialViews, StartingContainer, CommunicateContainer, FinishContainer, PauseContainer, DoneContainer, CloseActionsContainer;
-    public GameObject HowContainer, ScoreContainer, BreathingContainer, PulseContainer, CBContainer, RAContainer, BleedingContainer, FindVictimContainer;
-    public List<GameObject> TutorialList, TutorialVictimActions;
-
-    bool NotShownCommunicate = true;
-    bool NotShownVictim = true;
-    bool NotClickedX = true;
-    bool NotClickedMark = true;
-    bool IsNotMarked = true;
-    bool NotShowingPopUp = true;
-    // --------------- TUTORIAL END ----------------------------------
-
-    void Start() {
-        BleedingBtn = HUD.transform.Find("Bleeding").gameObject;
-        BreathImage = HUD.transform.Find("Breath").gameObject;
-        BreathingBtn = HUD.transform.Find("Breathing").gameObject;
-        PulseBtn = HUD.transform.Find("Pulse").gameObject;
-        RABtn = HUD.transform.Find("ReleaseAirways").gameObject;
-        CBBtn = HUD.transform.Find("CapillaryBackfill").gameObject;
-
-        HowBtn = HUD.transform.Find("HowBtn").gameObject;
-        HowLayer = HUD.transform.Find("HowLayer").gameObject;
-        HowCloseBtn = HUD.transform.Find("HowCloseBtn").gameObject;
-        HowBlurEffect = HUD.transform.Find("HowBlurEffect").gameObject;
-
-        SoundLayer = HUD.transform.Find("SoundLayer").gameObject;
-        SoundBlurEffect = HUD.transform.Find("SoundBlurEffect").gameObject;
-
-        MisAccRestartBtn = HUD.transform.Find("MisAccRestartBtn").gameObject;
-        MisAccGoToMenuBtn = HUD.transform.Find("MisAccGoToMenuBtn").gameObject;
-        MisAccBlurEffect = HUD.transform.Find("MisAccBlurEffect").gameObject;
-        MisAccLayer = HUD.transform.Find("MisAccLayer").gameObject;
-
-        GameOverLayer = HUD.transform.Find("GameOverLayer").gameObject;
-        GameOverBlurEffect = HUD.transform.Find("GameOverBlurEffect").gameObject;
-        GameOverRestartBtn = HUD.transform.Find("GameOverRestartBtn").gameObject;
-        GameOverGoToMenuBtn = HUD.transform.Find("GameOverGoToMenuBtn").gameObject;
-
-        MenuBtn = HUD.transform.Find("MenuBtn").gameObject;
-        MenuResumeBtn = HUD.transform.Find("MenuResumeBtn").gameObject;
-        MenuSoundBtn = HUD.transform.Find("MenuSoundBtn").gameObject;
-        MenuRestartBtn = HUD.transform.Find("MenuRestartBtn").gameObject;
-        MenuBlurEffect = HUD.transform.Find("MenuBlurEffect").gameObject;
-        MenuLayer = HUD.transform.Find("MenuLayer").gameObject;
-
-        White = HUD.transform.Find("White").gameObject;
-        BlackBtn = HUD.transform.Find("Black").gameObject;
-        RedBtn = HUD.transform.Find("Red").gameObject;
-        GreenBtn = HUD.transform.Find("Green").gameObject;
-        YellowBtn = HUD.transform.Find("Yellow").gameObject;
-
-        TripleBot = HUD.transform.Find("TripleBotBtn").gameObject;
-        TripleMid = HUD.transform.Find("TripleMidBtn").gameObject;
-        TripleTop = HUD.transform.Find("TripleTopBtn").gameObject;
-        TripleBtnBg = HUD.transform.Find("TripleBtnBg").gameObject;
-        TripleBtnClose = HUD.transform.Find("TripleBtnClose").gameObject;
-
-        CommTalkBtn = HUD.transform.Find("CommTalkBtn").gameObject;
-        CommFinishBtn = HUD.transform.Find("CommFinishBtn").gameObject;
-
-        Tourniquet = HUD.transform.Find("Tourniquet").gameObject;
-
+    void Start(){
         VictimActions = new List<GameObject>(){BleedingBtn, RABtn, BreathingBtn, PulseBtn, CBBtn};
         CardActions = new List<GameObject>(){BlackBtn,GreenBtn,RedBtn,YellowBtn};
         TripleActions = new List<GameObject>() { TripleBot, TripleMid, TripleTop, TripleBtnBg };
