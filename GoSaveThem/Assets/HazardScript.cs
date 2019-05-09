@@ -15,8 +15,11 @@ public class HazardScript : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("player in trigger");
+
         if (other.tag == "Player")
         {
+            Debug.Log("player in hazard");
             GameObject explosion = Instantiate(Explosion, transform.position, Quaternion.identity);
             other.GetComponent<Movement>().Die();
             
