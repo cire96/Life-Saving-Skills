@@ -44,6 +44,7 @@ public class Tutorial : MonoBehaviour
     {
         foreach (GameObject item in BtnActions)
         {
+
             item.GetComponent<Button>().interactable = false;
         }
     }
@@ -150,7 +151,7 @@ public class Tutorial : MonoBehaviour
     public void ShowCommunicate()
     {
         if (RescueRadius.GetComponent<RescueMeny>().GetActive()) {
-            DisableBtns();
+            //DisableBtns();
             if (NotShownCommunicate)
             {
                 CommunicateContainer.SetActive(true);
@@ -159,7 +160,7 @@ public class Tutorial : MonoBehaviour
             }
         } 
         else if (!RescueRadius.GetComponent<RescueMeny>().GetActive()) {
-            EnableBtns();
+            //EnableBtns();
             if (!NotShownCommunicate)
             {
                 CommunicateContainer.SetActive(false);
@@ -171,7 +172,7 @@ public class Tutorial : MonoBehaviour
     {
         if (VictimRadius.GetComponent<UIAppear>().GetActive())
         {
-            DisableBtns();
+            //DisableBtns();
             if (NotShownVictim)
             {
                 BleedingContainer.SetActive(true);
@@ -180,7 +181,7 @@ public class Tutorial : MonoBehaviour
         }
         else if (!VictimRadius.GetComponent<UIAppear>().GetActive())
         {
-            EnableBtns();
+            //EnableBtns();
             if (!NotShownVictim)
             {
                 BleedingContainer.SetActive(false);
@@ -190,16 +191,25 @@ public class Tutorial : MonoBehaviour
 
     void Update()
     {
+        //har ändrat här tabort commentarne när du hittar den
+        if(VictimRadius.GetComponent<UIAppear>().GetActive()||RescueRadius.GetComponent<RescueMeny>().GetActive()){
+            if(IsXClickable)
+            {
+                TripleBtnClose.GetComponent<Button>().interactable = true;
+            }
+            else
+            {
+                TripleBtnClose.GetComponent<Button>().interactable = false;
+                DisableBtns();
+            }
+        }
+        else{
+            EnableBtns();
+        }
         ShowCommunicate();
         EnteredVictimArea();
 
-        if(IsXClickable)
-        {
-            TripleBtnClose.GetComponent<Button>().interactable = true;
-        }
-        else
-        {
-            TripleBtnClose.GetComponent<Button>().interactable = false;
-        }
+         
+
     }
 }
