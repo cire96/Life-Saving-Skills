@@ -97,7 +97,7 @@ public class Movement : MonoBehaviour
     public void Die(){
         Debug.Log("U died");
         alive = false;
-        //anim.SetTrigger("DieTrigger");
+        anim.SetTrigger("HazardFall");
         Freeze = 2.5f;
   
 

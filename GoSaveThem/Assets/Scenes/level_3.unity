@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11448,6 +11448,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3041281514130437381, guid: d3014324d1b29443a961007cd899a160,
+        type: 3}
+      propertyPath: Explosion
+      value: 
+      objectReference: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3014324d1b29443a961007cd899a160, type: 3}
 --- !u!1 &788017463 stripped
@@ -19008,7 +19014,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 35518339, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -428.07404
+      value: -428.0739
       objectReference: {fileID: 0}
     - target: {fileID: 946148302, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
       propertyPath: m_AnchorMax.y
@@ -28216,22 +28222,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1449249106, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 16602562, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
-      propertyPath: HUD
-      value: 
-      objectReference: {fileID: 1184959225}
     - target: {fileID: 1449249107, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
       propertyPath: HUD
       value: 
       objectReference: {fileID: 1184959225}
-    - target: {fileID: 16602568, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
-      propertyPath: HUD
-      value: 
-      objectReference: {fileID: 1184959225}
+    - target: {fileID: 1449249106, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1449249111, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.53
@@ -28276,6 +28274,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 16602562, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
+      propertyPath: HUD
+      value: 
+      objectReference: {fileID: 1184959225}
+    - target: {fileID: 16602568, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
+      propertyPath: HUD
+      value: 
+      objectReference: {fileID: 1184959225}
     - target: {fileID: 658454124, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
       propertyPath: m_IsActive
       value: 1
