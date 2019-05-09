@@ -31,7 +31,7 @@ public class TutorialBtnReact : MonoBehaviour
     public List<GameObject> TripleActions; //x
 
     public GameObject[] victims;
-
+    
     public int numTourniquets;
     public bool isTripleBtnClicked = false;
 
@@ -47,7 +47,6 @@ public class TutorialBtnReact : MonoBehaviour
         SoundActions = new List<GameObject>() { SoundLayer, SoundBlurEffect };
         CommunicationActions = new List<GameObject>() { CommTalkBtn, CommFinishBtn };
 
-
         HideThis(VictimActions);
         HideThis(CardActions);
         HideThis(MenuActions);
@@ -61,8 +60,6 @@ public class TutorialBtnReact : MonoBehaviour
 
         textTourniquit = Tourniquit.transform.Find("numOf").gameObject;
         textTourniquit.GetComponent<TextMeshProUGUI>().text = numTourniquets.ToString();
-
-
     }
 
     public void HideThis(List<GameObject> ItemList)
@@ -209,15 +206,11 @@ public class TutorialBtnReact : MonoBehaviour
     public void ShowMenuLayer()
     {
         ShowThis(MenuActions);
-        Time.timeScale = 0; //Pausa spelet och tiden
-
     }
 
     public void HideMenuLayer()
     {
         HideThis(MenuActions);
-        Time.timeScale = 1; //Starta spelet och tiden
-
     }
 
     public void ShowGameOverLayer()
