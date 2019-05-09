@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
@@ -6,50 +7,55 @@ using UnityEngine.SceneManagement;
 public class Tutorial : MonoBehaviour
 {
     public GameObject HUD, Victim, VictimRadius;
-    GameObject RescueLeader, RescueRadius, MarkVictimContainer;
-    GameObject TutorialViews, StartingContainer, CommunicateContainer, FinishContainer, PauseContainer, DoneContainer, CloseActionsContainer;
-    GameObject HowContainer, ScoreContainer, BreathingContainer, PulseContainer, CBContainer, RAContainer, BleedingContainer;
+    public GameObject RescueLeader, RescueRadius, MarkVictimContainer, VictimSearchContainer;
+    public GameObject TutorialViews, StartingContainer, CommunicateContainer, FinishContainer, PauseContainer, DoneContainer, CloseActionsContainer;
+    public GameObject HowContainer, ScoreContainer, BreathingContainer, PulseContainer, CBContainer, RAContainer, BleedingContainer;
     public List<GameObject> TutorialList;
+
+
+    public GameObject TripleBot, TripleMid, TripleTop, TripleBtnBg, TripleBtnClose, HowBtn, MenuBtn;
+    public List<GameObject> BtnActions;
 
     bool NotShownCommunicate = true;
     bool NotShownVictim = true;
+    bool IsXClickable = false;
 
 
     // Use this for initialization
     void Start()
     {
+        Victim = GameObject.FindGameObjectWithTag("Victim");
+        VictimRadius = Victim.transform.Find("Radius").gameObject;
         RescueLeader = GameObject.FindGameObjectWithTag("RescueLeader");
         RescueRadius = RescueLeader.transform.Find("Radius").gameObject;
 
-        Victim = GameObject.FindGameObjectWithTag("Victim");
-        VictimRadius = Victim.transform.Find("Radius").gameObject;
-
-        TutorialViews = HUD.transform.Find("TutorialViews").gameObject;
-        StartingContainer = TutorialViews.transform.Find("StartingContainer").gameObject;
-        CommunicateContainer = TutorialViews.transform.Find("CommunicateContainer").gameObject;
-        FinishContainer = TutorialViews.transform.Find("FinishContainer").gameObject;
-        PauseContainer = TutorialViews.transform.Find("PauseContainer").gameObject;
-        HowContainer = TutorialViews.transform.Find("HowContainer").gameObject;
-        ScoreContainer = TutorialViews.transform.Find("ScoreContainer").gameObject;
-        BreathingContainer = TutorialViews.transform.Find("BreathingContainer").gameObject;
-        PulseContainer = TutorialViews.transform.Find("PulseContainer").gameObject;
-        CBContainer = TutorialViews.transform.Find("CBContainer").gameObject;
-        RAContainer = TutorialViews.transform.Find("RAContainer").gameObject;
-        BleedingContainer = TutorialViews.transform.Find("BleedingContainer").gameObject;
-        DoneContainer = TutorialViews.transform.Find("DoneContainer").gameObject;
-        CloseActionsContainer = TutorialViews.transform.Find("CloseActionsContainer").gameObject;
-        MarkVictimContainer = TutorialViews.transform.Find("MarkVictimContainer").gameObject;
-
-        TutorialList = new List<GameObject>() { StartingContainer, CommunicateContainer, FinishContainer, PauseContainer, HowContainer, ScoreContainer, BreathingContainer, PulseContainer, CBContainer, RAContainer, BleedingContainer, DoneContainer, CloseActionsContainer, MarkVictimContainer };
+        TutorialList = new List<GameObject>() { StartingContainer, CommunicateContainer, FinishContainer, PauseContainer, HowContainer, ScoreContainer, BreathingContainer, PulseContainer, CBContainer, RAContainer, BleedingContainer, DoneContainer, CloseActionsContainer, MarkVictimContainer, VictimSearchContainer };
+        BtnActions = new List<GameObject>() { TripleBot, TripleMid, TripleTop, TripleBtnBg, HowBtn, MenuBtn };
 
         CloseAll();
+        DisableBtns();
 
         Victim.SetActive(false);
         StartingContainer.SetActive(true);
         Time.timeScale = 0;
     }
 
-    // Update is called once per frame
+    public void DisableBtns()
+    {
+        foreach (GameObject item in BtnActions)
+        {
+            item.GetComponent<Button>().interactable = false;
+        }
+    }
+
+    public void EnableBtns()
+    {
+        foreach (GameObject item in BtnActions)
+        {
+            item.GetComponent<Button>().interactable = true;
+        }
+    }
+
     public void CloseAll()
     {
         foreach (GameObject item in TutorialList)
@@ -87,7 +93,7 @@ public class Tutorial : MonoBehaviour
     {
         ScoreContainer.SetActive(false);
         Victim.SetActive(true);
-        Time.timeScale = 1;
+        VictimSearchContainer.SetActive(true);
     }
 
     public void CloseBleeding()
@@ -119,13 +125,18 @@ public class Tutorial : MonoBehaviour
         CBContainer.SetActive(false);
         CloseActionsContainer.SetActive(true);
         Time.timeScale = 0;
+        IsXClickable = true;
     }
 
     public void CloseActions()
     {
-        CloseActionsContainer.SetActive(false);
-        MarkVictimContainer.SetActive(true);
-        Time.timeScale = 1;
+        if (IsXClickable)
+        {
+            CloseActionsContainer.SetActive(false);
+            MarkVictimContainer.SetActive(true);
+            Time.timeScale = 1;
+            IsXClickable = false;
+        }
 
     }
 
@@ -138,27 +149,42 @@ public class Tutorial : MonoBehaviour
 
     public void ShowCommunicate()
     {
-        if (RescueRadius.GetComponent<RescueMeny>().GetActive() && NotShownCommunicate)
-        {
-            CommunicateContainer.SetActive(true);
-            NotShownCommunicate = false;
-            Time.timeScale = 0;
+        if (RescueRadius.GetComponent<RescueMeny>().GetActive()) {
+            DisableBtns();
+            if (NotShownCommunicate)
+            {
+                CommunicateContainer.SetActive(true);
+                NotShownCommunicate = false;
+                Time.timeScale = 0;
+            }
         } 
-        else if (!RescueRadius.GetComponent<RescueMeny>().GetActive() && !NotShownCommunicate) {
-            CommunicateContainer.SetActive(false);
+        else if (!RescueRadius.GetComponent<RescueMeny>().GetActive()) {
+            EnableBtns();
+            if (!NotShownCommunicate)
+            {
+                CommunicateContainer.SetActive(false);
+            }
         }
     }
 
     public void EnteredVictimArea()
     {
-        if (VictimRadius.GetComponent<UIAppear>().GetActive() && NotShownVictim)
+        if (VictimRadius.GetComponent<UIAppear>().GetActive())
         {
-            BleedingContainer.SetActive(true);
-            NotShownVictim = false;
+            DisableBtns();
+            if (NotShownVictim)
+            {
+                BleedingContainer.SetActive(true);
+                NotShownVictim = false;
+            }
         }
-        else if (!VictimRadius.GetComponent<UIAppear>().GetActive() && !NotShownVictim)
+        else if (!VictimRadius.GetComponent<UIAppear>().GetActive())
         {
-            BleedingContainer.SetActive(false);
+            EnableBtns();
+            if (!NotShownVictim)
+            {
+                BleedingContainer.SetActive(false);
+            }
         }
     }
 
@@ -166,5 +192,14 @@ public class Tutorial : MonoBehaviour
     {
         ShowCommunicate();
         EnteredVictimArea();
+
+        if(IsXClickable)
+        {
+            TripleBtnClose.GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            TripleBtnClose.GetComponent<Button>().interactable = false;
+        }
     }
 }
