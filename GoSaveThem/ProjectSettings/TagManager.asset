@@ -17,6 +17,9 @@ TagManager:
   - LyingSpawn
   - RescueLeader
   - HUD
+  - Collide
+  - TutorialViews
+  - CommTalkBtn
   layers:
   - Default
   - TransparentFX
