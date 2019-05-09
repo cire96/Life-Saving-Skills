@@ -15,6 +15,7 @@ public class PlayerCameraController : MonoBehaviour
         //transform.position = new Vector3(-5.07f, 2.51f, -52.4f);
         offset = transform.position - player.transform.position;
         outZoomed = true;
+        //zoomCamera();
     }
 
     // Update is called once per frame
