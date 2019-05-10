@@ -37,7 +37,6 @@ public class RescueMeny : MonoBehaviour
                 action.SetActive(true);
             }
         }
-
     }
 
     void OnTriggerExit(Collider other)
@@ -52,8 +51,6 @@ public class RescueMeny : MonoBehaviour
             }
             TalkImage.SetActive(false);
             TalkImageActive = false;
-
-
         }
     }
 
@@ -73,6 +70,5 @@ public class RescueMeny : MonoBehaviour
             TalkImage.SetActive(true);
             TalkImageActive = true;
         }
-
     }
 }
