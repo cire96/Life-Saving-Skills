@@ -16,7 +16,7 @@ public class Tutorial : MonoBehaviour
     TutorialBtnReact TutorialBtnReact;
     PointCount PointCount;
 
-    public GameObject TripleBot, TripleMid, TripleTop, TripleBtnBg, TripleBtnClose, HowBtn, MenuBtn;
+    public GameObject TripleBot, TripleMid, TripleTop, TripleBtnBg, TripleBtnClose, TripleBtnDisabled, HowBtn, MenuBtn;
     public List<GameObject> BtnActions;
 
     bool NotShownCommunicate = true;
@@ -43,14 +43,14 @@ public class Tutorial : MonoBehaviour
         YellowBtn.GetComponent<Button>().onClick.AddListener(SetMarked);
 
         TutorialList = new List<GameObject>() { StartingContainer, CommunicateContainer, FinishContainer, PauseContainer, HowContainer, ScoreContainer, BreathingContainer, PulseContainer, CBContainer, RAContainer, BleedingContainer, DoneContainer, CloseActionsContainer, MarkVictimContainer, VictimSearchContainer, NotFinishedContainer };
-        BtnActions = new List<GameObject>() { TripleBot, TripleMid, TripleTop, TripleBtnBg, HowBtn, MenuBtn };
+        BtnActions = new List<GameObject>() { HowBtn, MenuBtn };
         BtnList = new List<GameObject>() { BlackBtn, RedBtn, YellowBtn, GreenBtn };
 
         CloseAll();
-        DisableBtns();
 
         Victim.SetActive(false);
         StartingContainer.SetActive(true);
+        TripleBtnDisabled.SetActive(true);
         Time.timeScale = 0;
     }
 
@@ -62,28 +62,11 @@ public class Tutorial : MonoBehaviour
         DoneContainer.SetActive(true);
     }
 
-    public void DisableBtns()
-    {
-        foreach (GameObject item in BtnActions)
-        {
-            item.GetComponent<Button>().interactable = false;
-        }
-    }
-
     public void DisableMarks()
     {
         foreach (GameObject item in BtnList)
         {
-
             item.SetActive(false);
-        }
-    }
-
-    public void EnableBtns()
-    {
-        foreach (GameObject item in BtnActions)
-        {
-            item.GetComponent<Button>().interactable = true;
         }
     }
 
@@ -192,7 +175,7 @@ public class Tutorial : MonoBehaviour
             CommunicateContainer.SetActive(true);
             NotShownCommunicate = false;
             Time.timeScale = 0;
-        } 
+        }
         else if (!RescueRadius.GetComponent<RescueMeny>().GetActive() && !NotShownCommunicate) 
         {
             CommunicateContainer.SetActive(false);
@@ -205,11 +188,14 @@ public class Tutorial : MonoBehaviour
         {
             BleedingContainer.SetActive(true);
             NotShownVictim = false;
+            TripleBtnDisabled.SetActive(false);
         }
         else if (!VictimRadius.GetComponent<UIAppear>().GetActive() &&  !NotShownVictim)
         {
             CloseAll();
+            TripleBtnDisabled.SetActive(true);
             NotShownVictim = true;
+            IsXClickable = false;
         }
     }
 
@@ -227,32 +213,33 @@ public class Tutorial : MonoBehaviour
 
     void Update()
     {
-        if(VictimRadius.GetComponent<UIAppear>().GetActive() || RescueRadius.GetComponent<RescueMeny>().GetActive()){
-            if(IsXClickable)
+        ShowCommunicate();
+        EnteredVictimArea();
+        if(VictimRadius.GetComponent<UIAppear>().GetActive() || RescueRadius.GetComponent<RescueMeny>().GetActive())
+        {
+            HowBtn.GetComponent<Button>().interactable = false;
+            MenuBtn.GetComponent<Button>().interactable = false;
+
+            if (IsXClickable)
             {
                 TripleBtnClose.GetComponent<Button>().interactable = true;
             }
             else
             {
                 TripleBtnClose.GetComponent<Button>().interactable = false;
-                DisableBtns();
             }
             if (IsTripleMidClickable)
             {
                 TripleMid.GetComponent<Button>().interactable = true;
                 TripleBtnBg.GetComponent<Button>().interactable = true;
             }
-            else
-            {
-                DisableBtns();
-            }
         }
-        else{
-            EnableBtns();
+        else
+        {
             TripleBtnClose.GetComponent<Button>().interactable = true;
             TutorialBtnReact.TripleBtnToggle(false);
+            HowBtn.GetComponent<Button>().interactable = true;
+            MenuBtn.GetComponent<Button>().interactable = true;
         }
-        ShowCommunicate();
-        EnteredVictimArea(); 
     }
 }
