@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641287, b: 0.5748173, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -28607,11 +28607,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 16602562, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
+      propertyPath: HUD
+      value: 
+      objectReference: {fileID: 464912498}
     - target: {fileID: 1449249107, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
       propertyPath: HUD
       value: 
       objectReference: {fileID: 464912498}
-    - target: {fileID: 16602562, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
+    - target: {fileID: 16602568, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
       propertyPath: HUD
       value: 
       objectReference: {fileID: 464912498}
@@ -28659,10 +28663,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 16602568, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
-      propertyPath: HUD
-      value: 
-      objectReference: {fileID: 464912498}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
 --- !u!1001 &1953784909
@@ -31609,6 +31609,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GivePriority
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937401111611599616, guid: f7a6fd9f8a5b74fb684eafbe615fa259,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 464912499}
+    - target: {fileID: 1937401111611599616, guid: f7a6fd9f8a5b74fb684eafbe615fa259,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReleaseAirways
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937401111856148947, guid: f7a6fd9f8a5b74fb684eafbe615fa259,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 464912498}
+    - target: {fileID: 1937401111856148947, guid: f7a6fd9f8a5b74fb684eafbe615fa259,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937401111870326160, guid: f7a6fd9f8a5b74fb684eafbe615fa259,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 464912499}
+    - target: {fileID: 1937401111870326160, guid: f7a6fd9f8a5b74fb684eafbe615fa259,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Bleeding
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937401112059766714, guid: f7a6fd9f8a5b74fb684eafbe615fa259,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 464912499}
+    - target: {fileID: 1937401112059766714, guid: f7a6fd9f8a5b74fb684eafbe615fa259,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CapillaryBackfill
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
