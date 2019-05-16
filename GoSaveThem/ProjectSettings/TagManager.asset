@@ -17,6 +17,7 @@ TagManager:
   - LyingSpawn
   - RescueLeader
   - HUD
+  - Tutorial
   layers:
   - Default
   - TransparentFX
