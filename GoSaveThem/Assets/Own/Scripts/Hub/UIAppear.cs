@@ -11,18 +11,18 @@ public class UIAppear : MonoBehaviour
     public List<GameObject> CardActions;
     public List<GameObject> TripleActions;
     public bool active;
-    GameObject TripleBtnLayer, TripleBtnClose, TripleMidBtn, TripleTopBtn, TripleBotBtn,
-        BleedingBtn, RABtn, CBBtn, BreathingBtn, PulseBtn, BlackBtn, RedBtn, GreenBtn, YellowBtn;
+    GameObject BleedingBtn, RABtn, CBBtn, BreathingBtn, PulseBtn, BlackBtn, RedBtn, GreenBtn, YellowBtn;
+    GameObject TripleBtnLayer, TripleBtnClose, TripleMidBtn, TripleBotBtn, TripleBtnBg;
 
     void Start(){
-
+    
         HUD = GameObject.FindGameObjectWithTag("HUD");
 
         TripleBtnLayer = HUD.transform.Find("TripleBtnLayer").gameObject;
         TripleBtnClose = TripleBtnLayer.transform.Find("TripleBtnClose").gameObject;
         TripleMidBtn = TripleBtnLayer.transform.Find("TripleMidBtn").gameObject;
-        TripleTopBtn = TripleBtnLayer.transform.Find("TripleTopBtn").gameObject;
         TripleBotBtn = TripleBtnLayer.transform.Find("TripleBotBtn").gameObject;
+        TripleBtnBg = TripleBtnLayer.transform.Find("TripleBtnBg").gameObject;
 
         BleedingBtn = HUD.transform.Find("Bleeding").gameObject;
         RABtn = HUD.transform.Find("ReleaseAirways").gameObject;
@@ -37,10 +37,18 @@ public class UIAppear : MonoBehaviour
 
         VictimActions = new List<GameObject>() { BleedingBtn, RABtn, BreathingBtn, PulseBtn, CBBtn };
         CardActions = new List<GameObject>() { BlackBtn, GreenBtn, RedBtn, YellowBtn };
-        TripleActions = new List<GameObject>() { TripleBotBtn, TripleMidBtn, TripleTopBtn };
+        TripleActions = new List<GameObject>() { TripleBotBtn, TripleMidBtn };
+
         active = false;
         Debug.Log(transform.childCount);
         ring = transform.GetChild(0).gameObject;
+
+        foreach (GameObject tripleBtn in TripleActions)
+        {
+            tripleBtn.GetComponent<Button>().interactable = false;
+        }
+        TripleBtnBg.GetComponent<Button>().interactable = false;
+
     }
 
     void OnTriggerEnter (Collider other) {
@@ -51,11 +59,13 @@ public class UIAppear : MonoBehaviour
             foreach(GameObject action in VictimActions){
                 action.SetActive(true);
             }
-            TripleBtnClose.SetActive(true);
-            foreach(GameObject tripleBtn in TripleActions)
+            foreach (GameObject tripleBtn in TripleActions)
             {
                 tripleBtn.GetComponent<Button>().interactable = true;
             }
+            TripleBtnBg.SetActive(false);
+            TripleBtnBg.GetComponent<Button>().interactable = true;
+            TripleBtnClose.SetActive(true);
         }
 
     }
@@ -64,6 +74,8 @@ public class UIAppear : MonoBehaviour
         if (other.tag =="Player") {
         	active = false;
             ring.SetActive(false);
+            TripleBtnClose.SetActive(false);
+            TripleBtnBg.SetActive(true);
             foreach (GameObject btn in VictimActions){
                 btn.SetActive(false);
             }
@@ -74,6 +86,7 @@ public class UIAppear : MonoBehaviour
             {
                 tripleBtn.GetComponent<Button>().interactable = false;
             }
+            TripleBtnBg.GetComponent<Button>().interactable = false;
         }
     }
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
@@ -15,7 +16,7 @@ public class BtnReact : MonoBehaviour
     public GameObject MenuResumeBtn, MenuSoundBtn, MenuRestartBtn, MenuBlurEffect, MenuLayer;
     public GameObject BlackBtn, RedBtn, GreenBtn, YellowBtn;
     public GameObject BleedingBtn, RABtn, BreathingBtn, CBBtn, PulseBtn;
-    public GameObject TripleBot, TripleMid, TripleTop, TripleBtnBg, TripleBtnClose;
+    public GameObject TripleBot, TripleMid, TripleBtnBg, TripleBtnClose;
     public GameObject CommTalkBtn, CommFinishBtn;
     public GameObject Tourniquit;
     GameObject textTourniquit;
@@ -37,14 +38,13 @@ public class BtnReact : MonoBehaviour
     void Start(){
         VictimActions = new List<GameObject>(){BleedingBtn, RABtn, BreathingBtn, PulseBtn, CBBtn};
         CardActions = new List<GameObject>(){BlackBtn,GreenBtn,RedBtn,YellowBtn};
-        TripleActions = new List<GameObject>() { TripleBot, TripleMid, TripleTop, TripleBtnBg };
+        TripleActions = new List<GameObject>() { TripleBot, TripleMid, TripleBtnBg };
         MenuActions = new List<GameObject>() { MenuResumeBtn, MenuSoundBtn, MenuRestartBtn, MenuBlurEffect, MenuLayer };
         GameOverActions = new List<GameObject>() { GameOverLayer, GameOverBlurEffect, GameOverRestartBtn, GameOverGoToMenuBtn };
         MisAccActions = new List<GameObject>() { MisAccRestartBtn, MisAccGoToMenuBtn, MisAccBlurEffect, MisAccLayer };
         HowActions = new List<GameObject>() { HowLayer, HowCloseBtn, HowBlurEffect };
         SoundActions = new List<GameObject>() { SoundLayer, SoundBlurEffect };
         CommunicationActions = new List<GameObject>() { CommTalkBtn, CommFinishBtn };
-
 
         HideThis(VictimActions);
         HideThis(CardActions);
@@ -54,13 +54,26 @@ public class BtnReact : MonoBehaviour
         HideThis(MisAccActions);
         HideThis(HowActions);
 
-        ShowThis(TripleActions);
         TripleBtnToggle(false);
 
         textTourniquit = Tourniquit.transform.Find("numOf").gameObject;
         textTourniquit.GetComponent<TextMeshProUGUI>().text = numTourniquets.ToString(); 
-       
+    }
 
+    public void DisableTripleBtn()
+    {
+        foreach (GameObject tripleBtn in TripleActions)
+        {
+            tripleBtn.GetComponent<Button>().interactable = false;
+        }
+    }
+
+    public void EnableTripleBtn()
+    {
+        foreach (GameObject tripleBtn in TripleActions)
+        {
+            tripleBtn.GetComponent<Button>().interactable = true;
+        }
     }
 
     public void HideThis(List<GameObject> ItemList)
@@ -108,21 +121,7 @@ public class BtnReact : MonoBehaviour
             ShowThis(CardActions);
             TripleBtnToggle(true);
         }
-        else if (ThisBtn == "TopBtn")
-        {
-            ShowThis(CommunicationActions);
-            TripleBtnToggle(true);
-        }
-
     }
-
-
-
-
-
-
-
-
 
     public GameObject getVictim(){
         foreach(GameObject victim in GameObject.FindGameObjectsWithTag("Victim")){
@@ -196,14 +195,12 @@ public class BtnReact : MonoBehaviour
     {
         ShowThis(MenuActions);
         Time.timeScale = 0; //Pausa spelet och tiden
-
     }
 
     public void HideMenuLayer()
     {
         HideThis(MenuActions);
         Time.timeScale = 1; //Starta spelet och tiden
-
     }
 
     public void ShowGameOverLayer()

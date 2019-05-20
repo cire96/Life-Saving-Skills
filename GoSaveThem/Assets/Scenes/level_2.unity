@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641287, b: 0.5748173, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19374,6 +19374,40 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 271948ad22082415891e04f1c4f90dcc,
         type: 3}
+    - target: {fileID: 1937401111860968016, guid: 51d4002bd37164504aead2e90205f7fc,
+        type: 3}
+      propertyPath: TripleBot
+      value: 
+      objectReference: {fileID: 1772186035}
+    - target: {fileID: 438684256, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -11
+      objectReference: {fileID: 0}
+    - target: {fileID: 438684256, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 550210831, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 76
+      objectReference: {fileID: 0}
+    - target: {fileID: 550210831, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 115
+      objectReference: {fileID: 0}
+    - target: {fileID: 868676988, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 868676988, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 868676990, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 35b99fab9ac4e4c93943bb7316a619ad,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
 --- !u!1001 &1268259396
@@ -26799,6 +26833,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9415d5fbf987e4d47b3c90bea3a0d824, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2b133bd1e0723046a270de71e937731, type: 3}
+--- !u!1 &1772186035 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 438684255, guid: 51d4002bd37164504aead2e90205f7fc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1267028374}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1772739473
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28605,14 +28645,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1449249107, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
-      propertyPath: HUD
-      value: 
-      objectReference: {fileID: 1184959225}
     - target: {fileID: 1449249106, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 16602562, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
+      propertyPath: HUD
+      value: 
+      objectReference: {fileID: 1184959225}
+    - target: {fileID: 1449249107, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
+      propertyPath: HUD
+      value: 
+      objectReference: {fileID: 1184959225}
+    - target: {fileID: 16602568, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
+      propertyPath: HUD
+      value: 
+      objectReference: {fileID: 1184959225}
     - target: {fileID: 1449249111, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.53
@@ -28657,14 +28705,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 16602562, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
-      propertyPath: HUD
-      value: 
-      objectReference: {fileID: 1184959225}
-    - target: {fileID: 16602568, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
-      propertyPath: HUD
-      value: 
-      objectReference: {fileID: 1184959225}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
 --- !u!1001 &1953784909
