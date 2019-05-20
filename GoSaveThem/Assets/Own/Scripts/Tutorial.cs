@@ -32,8 +32,7 @@ public class Tutorial : MonoBehaviour
         TutorialBtnReact = GameObject.FindGameObjectWithTag("HUD").GetComponent<TutorialBtnReact>();
         PointCount = GameObject.FindGameObjectWithTag("Player").GetComponent<PointCount>();
 
-        Victim = GameObject.FindGameObjectWithTag("Victim");
-        VictimRadius = Victim.transform.Find("Radius").gameObject;
+        
         RescueLeader = GameObject.FindGameObjectWithTag("RescueLeader");
         RescueRadius = RescueLeader.transform.Find("Radius").gameObject;
 
@@ -48,10 +47,13 @@ public class Tutorial : MonoBehaviour
 
         CloseAll();
 
-        Victim.SetActive(false);
+        
         StartingContainer.SetActive(true);
         TripleBtnDisabled.SetActive(true);
         Time.timeScale = 0;
+
+        
+
     }
 
     public void SetMarked()
@@ -106,7 +108,7 @@ public class Tutorial : MonoBehaviour
     public void CloseScore()
     {
         ScoreContainer.SetActive(false);
-        Victim.SetActive(true);
+        //Victim.SetActive(true);
         VictimSearchContainer.SetActive(true);
     }
 
@@ -213,6 +215,8 @@ public class Tutorial : MonoBehaviour
 
     void Update()
     {
+        Victim = GameObject.FindGameObjectWithTag("Victim");
+        VictimRadius = Victim.transform.Find("Radius").gameObject;
         ShowCommunicate();
         EnteredVictimArea();
         if(VictimRadius.GetComponent<UIAppear>().GetActive() || RescueRadius.GetComponent<RescueMeny>().GetActive())
