@@ -141,6 +141,7 @@ public class BtnReact : MonoBehaviour
             Parameters.SetPrioColor(color);
             ShowPriority ShowPriority = victim.transform.Find("PriorityCard").GetComponent<ShowPriority>();
             ShowPriority.UpdatePriority(color);
+            HideThis(CardActions);
         }
     }
 
