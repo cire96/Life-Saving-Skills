@@ -19263,6 +19263,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 16602568}
     - target: {fileID: 1877911609, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1406594092}
+    - target: {fileID: 1877911609, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 16602563}
@@ -19309,7 +19313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 35518339, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -428.0739
+      value: -428.07404
       objectReference: {fileID: 0}
     - target: {fileID: 35518339, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -19356,11 +19360,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 16602563}
-    - target: {fileID: 1937401111611599616, guid: 51d4002bd37164504aead2e90205f7fc,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: CrouchMovment
-      objectReference: {fileID: 0}
     - target: {fileID: 1637620744, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
       propertyPath: m_havePropertiesChanged
       value: 1
@@ -19369,11 +19368,39 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 245694801, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 271948ad22082415891e04f1c4f90dcc,
-        type: 3}
+    - target: {fileID: 923364360, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680714302, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680714303, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 610
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680714303, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680714303, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -6.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680714303, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -11.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680714304, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
+      propertyPath: m_Text
+      value: 'Hi! There has been a car accident. Several pepople are surverly injured.
+        Please hurry! And also, watch out for the gas leak. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680714304, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 39
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51d4002bd37164504aead2e90205f7fc, type: 3}
 --- !u!1001 &1268259396
@@ -21478,6 +21505,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15.936111, y: 6, z: 15.936096}
   m_Center: {x: -7.5, y: 3, z: -7.500004}
+--- !u!114 &1406594092 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4326854716276273124, guid: 0a45add341fd94f4d83562876f6f2032,
+    type: 3}
+  m_PrefabInstance: {fileID: 1327599443}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa72e41fffa324e7c865c487eb3596b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1409410481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28605,14 +28644,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1449249107, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
-      propertyPath: HUD
-      value: 
-      objectReference: {fileID: 1184959225}
     - target: {fileID: 1449249106, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 16602562, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
+      propertyPath: HUD
+      value: 
+      objectReference: {fileID: 1184959225}
+    - target: {fileID: 1449249107, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
+      propertyPath: HUD
+      value: 
+      objectReference: {fileID: 1184959225}
+    - target: {fileID: 16602568, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
+      propertyPath: HUD
+      value: 
+      objectReference: {fileID: 1184959225}
     - target: {fileID: 1449249111, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.53
@@ -28657,14 +28704,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 16602562, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
-      propertyPath: HUD
-      value: 
-      objectReference: {fileID: 1184959225}
-    - target: {fileID: 16602568, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
-      propertyPath: HUD
-      value: 
-      objectReference: {fileID: 1184959225}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec95a1a47dd89419384a3c77769251f9, type: 3}
 --- !u!1001 &1953784909
