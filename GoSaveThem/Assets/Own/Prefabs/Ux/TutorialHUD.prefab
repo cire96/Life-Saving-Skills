@@ -506,7 +506,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hit the breathing button to measure the victim's breathing
+  m_Text: Hold the breathing button to measure the victim's breathing.
 --- !u!1 &94274263
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,7 +978,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hit the pulse button to measure the victim's pulse
+  m_Text: Hit the pulse button to measure the victim's pulse.
 --- !u!1 &163094562
 GameObject:
   m_ObjectHideFlags: 0
@@ -4835,8 +4835,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Hit the pause button in order to pause the game. By hitting pause, the
-    ggame freezes until you are ready to go again. '
+  m_Text: 'Hit the Pause button in order to pause the game. By hitting pause, the
+    game freezes until you are ready to go again. '
 --- !u!1 &846159316
 GameObject:
   m_ObjectHideFlags: 0
@@ -7377,7 +7377,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Get back to the rescue leader when you are done and hit the finish button
+  m_Text: Get back to the rescue leader when you are done and hit the Finish button
     on the right. Don't do this unless you are finished.
 --- !u!1 &1344045390
 GameObject:
@@ -7585,7 +7585,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Close victim action
+  m_Text: Close victim action.
 --- !u!1 &1379417533
 GameObject:
   m_ObjectHideFlags: 0
@@ -7870,7 +7870,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'This is the time left and your current scoring '
+  m_Text: This is the time left to finish the level, accompanied by your current score.
+    Finish as quickly as you can without making sloppy mistakes!
 --- !u!1 &1399859061
 GameObject:
   m_ObjectHideFlags: 0
@@ -8061,7 +8062,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hit the how button to get instructions on how to judge the situations.
+  m_Text: Hit the How button for further instructions on how to correctly assess victims'
+    status and their appropriate priority.
 --- !u!1 &1423253065
 GameObject:
   m_ObjectHideFlags: 0
@@ -8603,6 +8605,7 @@ MonoBehaviour:
   BleedingContainer: {fileID: 759012816}
   TutorialList: []
   BtnList: []
+  TripleActions: []
   BlackBtn: {fileID: 0}
   RedBtn: {fileID: 0}
   YellowBtn: {fileID: 0}
@@ -8612,7 +8615,6 @@ MonoBehaviour:
   TripleTop: {fileID: 0}
   TripleBtnBg: {fileID: 0}
   TripleBtnClose: {fileID: 0}
-  TripleBtnDisabled: {fileID: 0}
   HowBtn: {fileID: 0}
   MenuBtn: {fileID: 0}
   BtnActions: []
@@ -10111,8 +10113,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hit the communication button to the right in order to communicate with the
-    rescue leader for instructions
+  m_Text: Hit the Communication button to receive instructions from the rescue leader!
 --- !u!1 &1848205298
 GameObject:
   m_ObjectHideFlags: 0
@@ -10421,7 +10422,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hit the pulse button to measure the victim's capillary backfill
+  m_Text: Hit the pulse button to measure the victim's capillary backfill.
 --- !u!1 &1877911605
 GameObject:
   m_ObjectHideFlags: 0
@@ -10642,8 +10643,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You have completed this tutorial. Return to the rescue leader and turn in
-    this mission.
+  m_Text: You have completed this tutorial. Return to the rescue leader and to finish
+    the mission.
 --- !u!1 &1886456838
 GameObject:
   m_ObjectHideFlags: 0
