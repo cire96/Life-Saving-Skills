@@ -15,7 +15,7 @@ public class TutorialBtnReact : MonoBehaviour
     public GameObject MenuResumeBtn, MenuSoundBtn, MenuRestartBtn, MenuBlurEffect, MenuLayer;
     public GameObject BlackBtn, RedBtn, GreenBtn, YellowBtn;
     public GameObject BleedingBtn, RABtn, BreathingBtn, CBBtn, PulseBtn;
-    public GameObject TripleBot, TripleMid, TripleTop, TripleBtnBg, TripleBtnClose;
+    public GameObject TripleBot, TripleMid, TripleBtnBg, TripleBtnClose;
     public GameObject CommTalkBtn, CommFinishBtn;
     public GameObject Tourniquit;
     GameObject textTourniquit;
@@ -39,7 +39,7 @@ public class TutorialBtnReact : MonoBehaviour
     {
         VictimActions = new List<GameObject>() { BleedingBtn, RABtn, BreathingBtn, PulseBtn, CBBtn };
         CardActions = new List<GameObject>() { BlackBtn, GreenBtn, RedBtn, YellowBtn };
-        TripleActions = new List<GameObject>() { TripleBot, TripleMid, TripleTop, TripleBtnBg };
+        TripleActions = new List<GameObject>() { TripleBot, TripleMid, TripleBtnBg };
         MenuActions = new List<GameObject>() { MenuResumeBtn, MenuSoundBtn, MenuRestartBtn, MenuBlurEffect, MenuLayer };
         GameOverActions = new List<GameObject>() { GameOverLayer, GameOverBlurEffect, GameOverRestartBtn, GameOverGoToMenuBtn };
         MisAccActions = new List<GameObject>() { MisAccRestartBtn, MisAccGoToMenuBtn, MisAccBlurEffect, MisAccLayer };
@@ -106,12 +106,6 @@ public class TutorialBtnReact : MonoBehaviour
         else if (ThisBtn == "MidBtn")
         {
             ShowThis(CardActions);
-            TripleBtnToggle(true);
-            isTripleBtnClicked = true;
-        }
-        else if (ThisBtn == "TopBtn")
-        {
-            ShowThis(CommunicationActions);
             TripleBtnToggle(true);
             isTripleBtnClicked = true;
         }

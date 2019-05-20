@@ -16,7 +16,7 @@ public class Tutorial : MonoBehaviour
     TutorialBtnReact TutorialBtnReact;
     PointCount PointCount;
 
-    public GameObject TripleBot, TripleMid, TripleTop, TripleBtnBg, TripleBtnClose, HowBtn, MenuBtn;
+    public GameObject TripleBot, TripleMid, TripleBtnBg, TripleBtnClose, HowBtn, MenuBtn;
     public List<GameObject> BtnActions;
 
     bool NotShownCommunicate = true;
@@ -31,7 +31,6 @@ public class Tutorial : MonoBehaviour
     {
         TutorialBtnReact = GameObject.FindGameObjectWithTag("HUD").GetComponent<TutorialBtnReact>();
         PointCount = GameObject.FindGameObjectWithTag("Player").GetComponent<PointCount>();
-
         
         RescueLeader = GameObject.FindGameObjectWithTag("RescueLeader");
         RescueRadius = RescueLeader.transform.Find("Radius").gameObject;
@@ -41,7 +40,7 @@ public class Tutorial : MonoBehaviour
         GreenBtn.GetComponent<Button>().onClick.AddListener(SetMarked);
         YellowBtn.GetComponent<Button>().onClick.AddListener(SetMarked);
 
-        TripleActions = new List<GameObject>() { TripleBot, TripleMid, TripleTop, TripleBtnBg, TripleBtnClose };
+        TripleActions = new List<GameObject>() { TripleBot, TripleMid, TripleBtnBg, TripleBtnClose };
         TutorialList = new List<GameObject>() { StartingContainer, CommunicateContainer, FinishContainer, PauseContainer, HowContainer, ScoreContainer, BreathingContainer, PulseContainer, CBContainer, RAContainer, BleedingContainer, DoneContainer, CloseActionsContainer, MarkVictimContainer, VictimSearchContainer, NotFinishedContainer };
         BtnActions = new List<GameObject>() { HowBtn, MenuBtn };
         BtnList = new List<GameObject>() { BlackBtn, RedBtn, YellowBtn, GreenBtn };
@@ -202,12 +201,14 @@ public class Tutorial : MonoBehaviour
 
         if (VictimRadius.GetComponent<UIAppear>().GetActive() && NotShownVictim)
         {
+            TripleBtnBg.SetActive(false);
             EnableTripleBtn();
             BleedingContainer.SetActive(true);
             NotShownVictim = false;
         }
-        else if (!VictimRadius.GetComponent<UIAppear>().GetActive() &&  !NotShownVictim)
+        else if (!VictimRadius.GetComponent<UIAppear>().GetActive() && !NotShownVictim)
         {
+            TripleBtnBg.SetActive(true);
             DisableTripleBtn();
             CloseAll();
             NotShownVictim = true;
@@ -250,6 +251,11 @@ public class Tutorial : MonoBehaviour
             {
                 TripleMid.GetComponent<Button>().interactable = true;
                 TripleBtnBg.GetComponent<Button>().interactable = true;
+                TripleBot.GetComponent<Button>().interactable = false;
+            }
+            if (IsTutorialFinished)
+            {
+                TripleBot.GetComponent<Button>().interactable = true;
             }
         }
         else
