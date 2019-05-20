@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIAppear : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class UIAppear : MonoBehaviour
     public List<GameObject> CardActions;
     public List<GameObject> TripleActions;
     public bool active;
-    GameObject TripleBtnLayer, TripleBtnClose, TripleMidBtn, TripleTopBtn, TripleBotBtn, TripleBtnDisabled,
+    GameObject TripleBtnLayer, TripleBtnClose, TripleMidBtn, TripleTopBtn, TripleBotBtn,
         BleedingBtn, RABtn, CBBtn, BreathingBtn, PulseBtn, BlackBtn, RedBtn, GreenBtn, YellowBtn;
 
     void Start(){
@@ -22,7 +23,6 @@ public class UIAppear : MonoBehaviour
         TripleMidBtn = TripleBtnLayer.transform.Find("TripleMidBtn").gameObject;
         TripleTopBtn = TripleBtnLayer.transform.Find("TripleTopBtn").gameObject;
         TripleBotBtn = TripleBtnLayer.transform.Find("TripleBotBtn").gameObject;
-        TripleBtnDisabled = HUD.transform.Find("TripleBtnDisabled").gameObject;
 
         BleedingBtn = HUD.transform.Find("Bleeding").gameObject;
         RABtn = HUD.transform.Find("ReleaseAirways").gameObject;
@@ -52,10 +52,9 @@ public class UIAppear : MonoBehaviour
                 action.SetActive(true);
             }
             TripleBtnClose.SetActive(true);
-            TripleBtnDisabled.SetActive(false);
             foreach(GameObject tripleBtn in TripleActions)
             {
-                tripleBtn.SetActive(false);
+                tripleBtn.GetComponent<Button>().interactable = true;
             }
         }
 
@@ -65,14 +64,17 @@ public class UIAppear : MonoBehaviour
         if (other.tag =="Player") {
         	active = false;
             ring.SetActive(false);
-            TripleBtnDisabled.SetActive(true);
             foreach (GameObject btn in VictimActions){
                 btn.SetActive(false);
             }
             foreach(GameObject btn in CardActions){
                 btn.SetActive(false);
             }
-         }
+            foreach (GameObject tripleBtn in TripleActions)
+            {
+                tripleBtn.GetComponent<Button>().interactable = false;
+            }
+        }
     }
 
     public bool GetActive()

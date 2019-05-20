@@ -10,13 +10,13 @@ public class Tutorial : MonoBehaviour
     public GameObject RescueLeader, RescueRadius, MarkVictimContainer, VictimSearchContainer, NotFinishedContainer;
     public GameObject TutorialViews, StartingContainer, CommunicateContainer, FinishContainer, PauseContainer, DoneContainer, CloseActionsContainer;
     public GameObject HowContainer, ScoreContainer, BreathingContainer, PulseContainer, CBContainer, RAContainer, BleedingContainer;
-    public List<GameObject> TutorialList, BtnList;
+    public List<GameObject> TutorialList, BtnList, TripleActions;
     public GameObject BlackBtn, RedBtn, YellowBtn, GreenBtn;
 
     TutorialBtnReact TutorialBtnReact;
     PointCount PointCount;
 
-    public GameObject TripleBot, TripleMid, TripleTop, TripleBtnBg, TripleBtnClose, TripleBtnDisabled, HowBtn, MenuBtn;
+    public GameObject TripleBot, TripleMid, TripleTop, TripleBtnBg, TripleBtnClose, HowBtn, MenuBtn;
     public List<GameObject> BtnActions;
 
     bool NotShownCommunicate = true;
@@ -41,19 +41,16 @@ public class Tutorial : MonoBehaviour
         GreenBtn.GetComponent<Button>().onClick.AddListener(SetMarked);
         YellowBtn.GetComponent<Button>().onClick.AddListener(SetMarked);
 
+        TripleActions = new List<GameObject>() { TripleBot, TripleMid, TripleTop, TripleBtnBg, TripleBtnClose };
         TutorialList = new List<GameObject>() { StartingContainer, CommunicateContainer, FinishContainer, PauseContainer, HowContainer, ScoreContainer, BreathingContainer, PulseContainer, CBContainer, RAContainer, BleedingContainer, DoneContainer, CloseActionsContainer, MarkVictimContainer, VictimSearchContainer, NotFinishedContainer };
         BtnActions = new List<GameObject>() { HowBtn, MenuBtn };
         BtnList = new List<GameObject>() { BlackBtn, RedBtn, YellowBtn, GreenBtn };
 
         CloseAll();
+        DisableTripleBtn();
 
-        
         StartingContainer.SetActive(true);
-        TripleBtnDisabled.SetActive(true);
         Time.timeScale = 0;
-
-        
-
     }
 
     public void SetMarked()
@@ -69,6 +66,22 @@ public class Tutorial : MonoBehaviour
         foreach (GameObject item in BtnList)
         {
             item.SetActive(false);
+        }
+    }
+
+    public void DisableTripleBtn()
+    {
+        foreach (GameObject tripleBtn in TripleActions)
+        {
+            tripleBtn.GetComponent<Button>().interactable = false;
+        }
+    }
+
+    public void EnableTripleBtn()
+    {
+        foreach (GameObject tripleBtn in TripleActions)
+        {
+            tripleBtn.GetComponent<Button>().interactable = true;
         }
     }
 
@@ -186,19 +199,20 @@ public class Tutorial : MonoBehaviour
 
     public void EnteredVictimArea()
     {
+
         if (VictimRadius.GetComponent<UIAppear>().GetActive() && NotShownVictim)
         {
+            EnableTripleBtn();
             BleedingContainer.SetActive(true);
             NotShownVictim = false;
-            TripleBtnDisabled.SetActive(false);
         }
         else if (!VictimRadius.GetComponent<UIAppear>().GetActive() &&  !NotShownVictim)
         {
+            DisableTripleBtn();
             CloseAll();
-            TripleBtnDisabled.SetActive(true);
             NotShownVictim = true;
             IsXClickable = false;
-        }
+         }
     }
 
     public void FinishTutorial()
