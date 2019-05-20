@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1519,7 +1519,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Look for possible victims
+  m_Text: Look for any victims, assess their health status and give them a fitting
+    priority!
 --- !u!222 &68286653
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -31129,6 +31130,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TutorialHUD
       objectReference: {fileID: 0}
+    - target: {fileID: 1681815892, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1533205989, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
       propertyPath: Victim
       value: 
@@ -31340,11 +31345,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 35518339, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -2.6801147
+      value: -2.6801453
       objectReference: {fileID: 0}
     - target: {fileID: 35518339, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -428.0739
+      value: -428.07404
       objectReference: {fileID: 0}
     - target: {fileID: 946148302, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
       propertyPath: m_AnchorMax.y
@@ -31580,13 +31585,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 536901802, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
       propertyPath: m_Text
-      value: Hit the bleeding button to stop the victims bleeding with a tornique.
-        You have a limited amount of torniques.
+      value: Hit the Tornique button to stop the victim's bleeding with a tornique.
+        Be aware, you have a limited amount of torniques!
+      objectReference: {fileID: 0}
+    - target: {fileID: 536901802, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 827581280, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
       propertyPath: m_Text
-      value: 'Hit the pause button in order to pause the game. By hitting pause, the
-        game freezes until you are ready to go again. '
+      value: 'Press here to pause the game. By hitting pause, the game freezes until
+        you are ready to go again. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 827581280, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 827581280, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 827581280, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 827581280, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 1185457377, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
       propertyPath: m_Text
@@ -31594,16 +31619,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1302878088, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
       propertyPath: m_Text
-      value: Get back to the rescue leader when you are done and hit the finish button.
+      value: Get back to the rescue leader when you are done and hit the Finish button.
         Don't do this unless you are finished.
       objectReference: {fileID: 0}
     - target: {fileID: 1357846636, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
       propertyPath: m_Text
-      value: Close victim actions
+      value: Give priority level
       objectReference: {fileID: 0}
     - target: {fileID: 1705375110, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
       propertyPath: m_Text
-      value: 'Hit the release airways button to release the victims airways. '
+      value: 'Hit the Release airways button to release the victim''s airways. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705375110, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705375110, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 1741868719, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
       propertyPath: m_Text
@@ -31612,17 +31645,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1845501305, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
       propertyPath: m_Text
-      value: Hit the communication button to communicate with the rescue leader for
-        instructions.
+      value: Start off every level by talking to the rescue leader. Hit the Talk button
+        to receive instructions from them.
       objectReference: {fileID: 0}
     - target: {fileID: 1876943144, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
       propertyPath: m_Text
-      value: 'To measure the victim''s capillary backfill press & hold the thumb.
-        Release it when it turns white and measure the timing. '
+      value: 'Measure the victim''s capillary backfill by pressing and holding the
+        thumb. When it turns white, release and measure how long it takes for its
+        color to return! '
       objectReference: {fileID: 0}
     - target: {fileID: 1876943144, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 32
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876943144, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_FontData.m_RichText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876943144, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876943144, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876943144, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1937401110893907493, guid: f7a6fd9f8a5b74fb684eafbe615fa259,
         type: 3}
@@ -31723,6 +31773,182 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CapillaryBackfill
+      objectReference: {fileID: 0}
+    - target: {fileID: 82343433, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 82343433, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 82343433, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82343432, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 237044047, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 759012816, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016377274, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1062818419, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117663981, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200412860, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1390605014, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399859061, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1541808767, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724724365, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1848205298, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851388061, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082996979, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013995589, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1062818421, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201300263, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1390605016, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399859063, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 33183673, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_Text
+      value: Check their pulse!
+      objectReference: {fileID: 0}
+    - target: {fileID: 91487868, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_Text
+      value: Hold the Breathing button to measure the victim's breathing. They might
+        need their airways freed!
+      objectReference: {fileID: 0}
+    - target: {fileID: 91487868, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 41
+      objectReference: {fileID: 0}
+    - target: {fileID: 162139724, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_Text
+      value: Hold the Pulse button to measure the victim's pulse.
+      objectReference: {fileID: 0}
+    - target: {fileID: 322607190, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_Text
+      value: Release airways
+      objectReference: {fileID: 0}
+    - target: {fileID: 388443218, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_Text
+      value: The How window
+      objectReference: {fileID: 0}
+    - target: {fileID: 406476551, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_Text
+      value: Set the victim's priority based on your assessment of their status.
+      objectReference: {fileID: 0}
+    - target: {fileID: 422982033, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_Text
+      value: Stop the bleeding!
+      objectReference: {fileID: 0}
+    - target: {fileID: 762774008, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_Text
+      value: When you have assessed the victim's status, press here to switch choose
+        their priority!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082966038, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082966038, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082966038, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_FontData.m_AlignByGeometry
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082966038, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082966038, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082966038, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394669438, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 1418642262, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_Text
+      value: Hit the How button for further instructions on how to correctly assess
+        victim status and their appropriate priority.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1418642262, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882076516, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_Text
+      value: You have completed this tutorial. Hurry back to the rescue leader to
+        finish the mission.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943061349, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_Text
+      value: Are they breathing?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943061349, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7a6fd9f8a5b74fb684eafbe615fa259, type: 3}
