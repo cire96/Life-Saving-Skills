@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System.Linq;
 
 public class RescueMeny : MonoBehaviour
 {
     public GameObject HUD;
-    GameObject FinishBtn, TalkBtn, TalkImage, CommunicationLayer;
+    GameObject FinishBtn, TalkBtn, TalkImage, CommunicationLayer, TalkText;
     public List<GameObject> actions;
     public bool active;
     public bool TalkImageActive = false;
@@ -23,6 +25,10 @@ public class RescueMeny : MonoBehaviour
         {
             btn.SetActive(false);
         }
+        TalkText = TalkImage.transform.Find("TalkText").gameObject;
+        Text txtField = TalkText.GetComponent<Text>();
+        txtField.text = "Hi! There has been a car accident. Several pepople are serverely injured. Please hurry! And also, watch out for the gas leak... ";
+        TalkText.SetActive(false);
         TalkImage.SetActive(false);
     }
 
@@ -51,6 +57,7 @@ public class RescueMeny : MonoBehaviour
             }
             TalkImage.SetActive(false);
             TalkImageActive = false;
+            TalkText.SetActive(false);
         }
     }
 
@@ -64,11 +71,19 @@ public class RescueMeny : MonoBehaviour
         if (TalkImageActive) {
             TalkImage.SetActive(false);
             TalkImageActive = false;
+            TalkText.SetActive(false);
         }
         else
         {
             TalkImage.SetActive(true);
             TalkImageActive = true;
+            TalkText.SetActive(true);
         }
+    }
+    public void CloseTalk()
+    {
+        TalkImage.SetActive(false);
+        TalkImageActive = false;
+        TalkText.SetActive(false);
     }
 }
