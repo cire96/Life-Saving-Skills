@@ -24,6 +24,6 @@ public class LevelSettings : MonoBehaviour
         // Resten blir antingen röda eller gula offer.
         NrYellowVictims = Random.Range(0, (NrVictims - NrGreenVictims - NrBlackVictims));
         NrRedVictims = NrVictims - NrGreenVictims - NrBlackVictims - NrYellowVictims;
-        SpawnHolder.GetComponent<Spawn>().SpawnVictims();
+        //SpawnHolder.GetComponent<Spawn>().SpawnVictims();
     }
 }
