@@ -80,4 +80,10 @@ public class RescueMeny : MonoBehaviour
             TalkText.SetActive(true);
         }
     }
+    public void CloseTalk()
+    {
+        TalkImage.SetActive(false);
+        TalkImageActive = false;
+        TalkText.SetActive(false);
+    }
 }

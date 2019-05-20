@@ -8,12 +8,13 @@ public class Countdown : MonoBehaviour
 {
     public GameObject HUD;
     private BtnReact BtnReactor;
-    public int timeLeft = 120;
+    public int timeLeft;
     public Text countdownTxt;
 
     // Use this for initialization
     void Start()
     {
+        timeLeft = 240; //set the time for the scene
         StartCoroutine("LoseTime");
         Time.timeScale = 1;
         BtnReactor = HUD.GetComponent<BtnReact>();
