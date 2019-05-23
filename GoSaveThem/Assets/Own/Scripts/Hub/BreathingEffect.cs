@@ -91,7 +91,7 @@ public class BreathingEffect : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     void startBreathing()
     {
         //BtnReact BtnReact
-        BtnReact BtnReact = Hud.GetComponent<BtnReact>();
+        TutorialBtnReact BtnReact = Hud.GetComponent<TutorialBtnReact>();
         GameObject victim = BtnReact.getVictim();
         Parameters Parameters = victim.GetComponent<Parameters>();
 

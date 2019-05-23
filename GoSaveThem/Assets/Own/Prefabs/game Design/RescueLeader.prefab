@@ -419,9 +419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa72e41fffa324e7c865c487eb3596b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FinishBtn: {fileID: 0}
-  TalkBtn: {fileID: 0}
-  TalkImage: {fileID: 0}
+  HUD: {fileID: 0}
   actions: []
   active: 0
   TalkImageActive: 0
@@ -448,7 +446,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4326854716290173192}
-  m_LocalRotation: {x: 0.6324858, y: 0.57854766, z: 0.37547132, w: -0.3525135}
+  m_LocalRotation: {x: 0.63248575, y: 0.5785476, z: 0.37547126, w: -0.35251346}
   m_LocalPosition: {x: -5.801534, y: -4.191418, z: 7.44715}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2338,7 +2336,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4326854717500387543}
-  m_LocalRotation: {x: -0.57854766, y: 0.6324858, z: -0.3525135, w: -0.37547135}
+  m_LocalRotation: {x: -0.5785476, y: 0.63248575, z: -0.35251346, w: -0.3754713}
   m_LocalPosition: {x: -5.8011727, y: -4.1914477, z: -7.447154}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2357,7 +2355,7 @@ GameObject:
   - component: {fileID: 4326854717513345694}
   - component: {fileID: 4326854717513345689}
   m_Layer: 0
-  m_Name: RescueLeader 1
+  m_Name: RescueLeader
   m_TagString: RescueLeader
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2398,7 +2396,7 @@ Animator:
   m_GameObject: {fileID: 4326854717513345695}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 897b34267f422c1499700402763d096e, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 74e61058d8fefc8bab652a77ef1ac3aa, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1

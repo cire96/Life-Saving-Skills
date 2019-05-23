@@ -7,7 +7,7 @@ using System.Threading;
 public class Countdown : MonoBehaviour
 {
     public GameObject HUD;
-    private BtnReact BtnReactor;
+    private TutorialBtnReact BtnReactor;
     public int timeLeft;
     public Text countdownTxt;
 
@@ -17,7 +17,7 @@ public class Countdown : MonoBehaviour
         timeLeft = 240; //set the time for the scene
         StartCoroutine("LoseTime");
         Time.timeScale = 1;
-        BtnReactor = HUD.GetComponent<BtnReact>();
+        BtnReactor = HUD.GetComponent<TutorialBtnReact>();
     }
 
     // Update is called once per frame

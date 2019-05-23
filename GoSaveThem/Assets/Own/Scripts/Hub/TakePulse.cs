@@ -64,7 +64,7 @@ public class TakePulse : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     }
     void startPulsation(){
     	//BtnReact BtnReact
-        BtnReact BtnReact = Hud.GetComponent<BtnReact>();
+        TutorialBtnReact BtnReact = Hud.GetComponent<TutorialBtnReact>();
         GameObject victim = BtnReact.getVictim();
         Parameters Parameters = victim.GetComponent<Parameters>();
 

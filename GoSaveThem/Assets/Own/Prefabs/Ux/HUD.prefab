@@ -230,7 +230,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.6801147, y: -428.07404}
+  m_AnchoredPosition: {x: -293.87515, y: -428.0739}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &35518340
@@ -1530,7 +1530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 305}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 135, y: 93.5}
+  m_AnchoredPosition: {x: -11, y: 14}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &438684259
@@ -1739,7 +1739,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 701310279}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.2944735
+  m_Size: 0.14723663
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1974,7 +1974,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 305}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 32, y: 57}
+  m_AnchoredPosition: {x: 76, y: 115}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &550210834
@@ -2242,6 +2242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 557473380}
   - component: {fileID: 557473381}
+  - component: {fileID: 1282748439}
   m_Layer: 5
   m_Name: VoiceSlider
   m_TagString: Untagged
@@ -2311,15 +2312,39 @@ MonoBehaviour:
   m_FillRect: {fileID: 385856425}
   m_HandleRect: {fileID: 57248358}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1282748439}
+        m_MethodName: Setlevel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1282748439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557473379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7451ae81bd6b783bc8270fb2b402be2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: 832692baad210eef1bfb9c33ba0b9f0d, type: 2}
 --- !u!1 &617994836
 GameObject:
   m_ObjectHideFlags: 0
@@ -3125,7 +3150,7 @@ RectTransform:
   m_GameObject: {fileID: 868676987}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 2.6, y: 2.6, z: 1}
   m_Children: []
   m_Father: {fileID: 1407711695}
   m_RootOrder: 0
@@ -3163,7 +3188,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 17215fef942424d14b3cb04ccc55b5d7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 35b99fab9ac4e4c93943bb7316a619ad, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5030,6 +5055,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: CloseTalk
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1506611156
@@ -5291,6 +5327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1620454931}
   - component: {fileID: 1620454932}
+  - component: {fileID: 1267028376}
   m_Layer: 5
   m_Name: MusicSlider
   m_TagString: Untagged
@@ -5360,15 +5397,39 @@ MonoBehaviour:
   m_FillRect: {fileID: 277540827}
   m_HandleRect: {fileID: 946148302}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1267028376}
+        m_MethodName: Setlevel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1267028376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620454930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7451ae81bd6b783bc8270fb2b402be2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: 832692baad210eef1bfb9c33ba0b9f0d, type: 2}
 --- !u!1 &1622469620
 GameObject:
   m_ObjectHideFlags: 0
@@ -5860,8 +5921,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -38.269226, y: 6.4179077}
-  m_SizeDelta: {x: 100, y: 50}
+  m_AnchoredPosition: {x: -7.54, y: 1.03}
+  m_SizeDelta: {x: 638.32, y: 138.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1680714305
 CanvasRenderer:
@@ -9631,7 +9692,7 @@ MonoBehaviour:
   BreathingBtn: {fileID: 1937401111856148948}
   CBBtn: {fileID: 1937401112059766716}
   PulseBtn: {fileID: 1937401110959397241}
-  TripleBot: {fileID: 0}
+  TripleBot: {fileID: 438684255}
   TripleMid: {fileID: 550210830}
   TripleBtnBg: {fileID: 868676987}
   TripleBtnClose: {fileID: 723095827}

@@ -91,7 +91,8 @@ public class Movement : MonoBehaviour
     }
 
     public void TalkMovment(){
-        anim.SetTrigger("TalkTrigger");
+        //anim.SetTrigger("TalkTrigger");
+        //Freeze = 2.3f;
     }
 
     public void Die(){

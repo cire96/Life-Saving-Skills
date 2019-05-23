@@ -8,6 +8,7 @@ public class RescueMeny : MonoBehaviour
 {
     public GameObject HUD;
     GameObject FinishBtn, TalkBtn, TalkImage, CommunicationLayer, TalkText;
+    Animator RescueLeaderAnim;
     public List<GameObject> actions;
     public bool active;
     public bool TalkImageActive = false;
@@ -30,6 +31,7 @@ public class RescueMeny : MonoBehaviour
         txtField.text = "Hi! There has been a car accident. Several pepople are serverely injured. Please hurry! And also, watch out for the gas leak... ";
         TalkText.SetActive(false);
         TalkImage.SetActive(false);
+        RescueLeaderAnim=transform.parent.gameObject.GetComponent<Animator>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -75,6 +77,7 @@ public class RescueMeny : MonoBehaviour
         }
         else
         {
+            RescueLeaderAnim.SetTrigger("LeaderTalkTrigger");
             TalkImage.SetActive(true);
             TalkImageActive = true;
             TalkText.SetActive(true);
