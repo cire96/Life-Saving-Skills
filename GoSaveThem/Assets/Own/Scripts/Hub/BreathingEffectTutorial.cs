@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class BreathingEffect : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class BreathingEffectTutorial : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
 
     public GameObject Img;
@@ -91,7 +91,7 @@ public class BreathingEffect : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     void startBreathing()
     {
         //BtnReact BtnReact
-        BtnReact BtnReact = Hud.GetComponent<BtnReact>();
+        TutorialBtnReact BtnReact = Hud.GetComponent<TutorialBtnReact>();
         GameObject victim = BtnReact.getVictim();
         Parameters Parameters = victim.GetComponent<Parameters>();
 

@@ -272,7 +272,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -293.87515, y: -428.0739}
+  m_AnchoredPosition: {x: -2.6801147, y: -428.0739}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &35518340
@@ -703,7 +703,7 @@ Transform:
   - {fileID: 1622469621}
   - {fileID: 1698457472}
   m_Father: {fileID: 1937401112233912950}
-  m_RootOrder: 31
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &104046350
 GameObject:
@@ -3058,7 +3058,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 701310279}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.14723663
+  m_Size: 0.29447353
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3300,7 +3300,7 @@ RectTransform:
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 1937401112233912950}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3576,7 +3576,7 @@ RectTransform:
   - {fileID: 1612108295}
   - {fileID: 512236239}
   m_Father: {fileID: 1937401112233912950}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3834,7 +3834,7 @@ RectTransform:
   m_Children:
   - {fileID: 25792702}
   m_Father: {fileID: 1937401112233912950}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5147,7 +5147,7 @@ RectTransform:
   - {fileID: 1379417534}
   - {fileID: 1205263513}
   m_Father: {fileID: 1937401112233912950}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6322,7 +6322,7 @@ RectTransform:
   - {fileID: 1695180083}
   - {fileID: 472800126}
   m_Father: {fileID: 1937401112233912950}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6472,7 +6472,7 @@ Transform:
   - {fileID: 1877911606}
   - {fileID: 1506611161}
   m_Father: {fileID: 1937401112233912950}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1062818419
 GameObject:
@@ -7335,7 +7335,7 @@ RectTransform:
   - {fileID: 158470628}
   - {fileID: 1756534350}
   m_Father: {fileID: 1937401112233912950}
-  m_RootOrder: 28
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8845,7 +8845,7 @@ RectTransform:
   m_Children:
   - {fileID: 1499390516}
   m_Father: {fileID: 1937401112233912950}
-  m_RootOrder: 33
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9076,7 +9076,7 @@ Transform:
   - {fileID: 423577984}
   - {fileID: 291321739}
   m_Father: {fileID: 1937401112233912950}
-  m_RootOrder: 32
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1533205989
 MonoBehaviour:
@@ -9909,7 +9909,7 @@ RectTransform:
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 1937401112233912950}
-  m_RootOrder: 30
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -10005,7 +10005,7 @@ RectTransform:
   m_Children:
   - {fileID: 320762505}
   m_Father: {fileID: 1937401112233912950}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10961,7 +10961,7 @@ RectTransform:
   - {fileID: 1915596784}
   - {fileID: 734012848}
   m_Father: {fileID: 1937401112233912950}
-  m_RootOrder: 29
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11340,7 +11340,7 @@ RectTransform:
   - {fileID: 1068164095}
   - {fileID: 104046351}
   m_Father: {fileID: 1937401112233912950}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13437,7 +13437,7 @@ GameObject:
   - component: {fileID: 1937401110959397126}
   - component: {fileID: 1937401110959397125}
   - component: {fileID: 1937401110959397124}
-  - component: {fileID: 1937401110959397127}
+  - component: {fileID: 1054574434}
   m_Layer: 5
   m_Name: Pulse
   m_TagString: Untagged
@@ -13502,7 +13502,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &1937401110959397127
+--- !u!114 &1054574434
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13511,7 +13511,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1937401110959397241}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 138d095a7b2cd8b4e92f588b096ec0c3, type: 3}
+  m_Script: {fileID: 11500000, guid: 33f70837eede849698069ba96131c4e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Hud: {fileID: 1937401111860968019}
@@ -14340,6 +14340,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: CrouchMovment
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1937401111653449717
@@ -14433,7 +14444,7 @@ GameObject:
   - component: {fileID: 1937401111705249651}
   - component: {fileID: 1937401111705249650}
   - component: {fileID: 1937401111705249653}
-  - component: {fileID: 1937401111705249648}
+  - component: {fileID: 1276436632}
   m_Layer: 5
   m_Name: White
   m_TagString: Untagged
@@ -14539,7 +14550,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &1937401111705249648
+--- !u!114 &1276436632
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14548,7 +14559,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1937401111705249655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdf38dfa57ac843fdad55fc3b2db66fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 48f7d1e98cdeb45b4aec3583c2767723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Thumb: {fileID: 1937401112027627656}
@@ -14567,8 +14578,8 @@ GameObject:
   - component: {fileID: 1937401111856148958}
   - component: {fileID: 1937401111856148944}
   - component: {fileID: 1937401111856148947}
-  - component: {fileID: 1937401111856148949}
   - component: {fileID: 1937401111856148945}
+  - component: {fileID: 503989851}
   m_Layer: 5
   m_Name: Breathing
   m_TagString: Untagged
@@ -14686,21 +14697,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &1937401111856148949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1937401111856148948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0567d6040943e944e8300eb2dd43e1c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Img: {fileID: 1937401110322061180}
-  Hud: {fileID: 1937401111860968019}
-  BreathingBlur: {fileID: 1937401110370834546}
 --- !u!114 &1937401111856148945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14713,6 +14709,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6366ee97f6b541449155028b9487355a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &503989851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937401111856148948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac16292136f9a4110baf70c681dd7084, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Img: {fileID: 1937401110322061180}
+  Hud: {fileID: 1937401111860968019}
+  BreathingBlur: {fileID: 1937401110370834546}
 --- !u!1 &1937401111860968019
 GameObject:
   m_ObjectHideFlags: 0
@@ -14764,6 +14775,7 @@ RectTransform:
   - {fileID: 1937401112027627668}
   - {fileID: 1937401111705249652}
   - {fileID: 1407711695}
+  - {fileID: 1501747504}
   - {fileID: 551279966}
   - {fileID: 1681815893}
   - {fileID: 533654077}
@@ -14777,7 +14789,6 @@ RectTransform:
   - {fileID: 1675175749}
   - {fileID: 94274264}
   - {fileID: 1533205988}
-  - {fileID: 1501747504}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15026,6 +15037,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 464912499}
         m_MethodName: Bleeding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: CrouchMovment
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

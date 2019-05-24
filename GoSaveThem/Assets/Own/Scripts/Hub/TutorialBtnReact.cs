@@ -172,7 +172,7 @@ public class TutorialBtnReact : MonoBehaviour
 
     public void CapillaryBackfill()
     {
-        Backfill Backfill = White.GetComponent<Backfill>();
+        BackfillTutorial Backfill = White.GetComponent<BackfillTutorial>();
         Backfill.ShowThumb();
     }
 

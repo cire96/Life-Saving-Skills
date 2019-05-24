@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 
-public class Backfill : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class BackfillTutorial : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     bool ispressed = false;
     float PressedTime, RefillTime;
@@ -57,7 +57,7 @@ public class Backfill : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         ThumbBlur.SetActive(true);
         Thumb.SetActive(true);
         ThumbWhite.SetActive(true);
-        BtnReact BtnReact = Hud.GetComponent<BtnReact>();
+        TutorialBtnReact BtnReact = Hud.GetComponent<TutorialBtnReact>();
         GameObject victim = BtnReact.getVictim();
         //Debug.Log(victim);
         Parameters Parameters = victim.GetComponent<Parameters>();
