@@ -22,11 +22,23 @@ public class Parameters : MonoBehaviour
         GiveParameters();
         
         // Sätter igång blodpartikelsystemt ifall den skadade blöder.
-        Blood.SetActive(Bleeding);
+        StartBleeding();
     }
 
     public void SetPrioColor(string color){
         SetPrio=color;
+    }
+    
+    public void StartBleeding(){
+        
+        if (Bleeding){
+            Blood.SetActive(Bleeding);
+            int sit = gameObject.GetComponent<victimController>().randNum;
+            if (sit == 0){
+                Debug.Log("Rotate bleeding");
+                Blood.transform.localRotation = Quaternion.Euler(-70,0,0);
+            }
+        }
     }
 
     void GiveParameters(){
