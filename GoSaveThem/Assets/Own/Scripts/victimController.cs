@@ -5,12 +5,14 @@ using UnityEngine;
 public class victimController : MonoBehaviour
 {
     public Animator anim;
+    public int randNum;
 
     // Start is called before the first frame update
     void Awake()
     {
+        randNum = Random.Range(0,2);
         anim = GetComponent<Animator>();
-        int randNum = Random.Range(0,2);
+        
         if(randNum == 1){
             Debug.Log("sitting");
             anim.SetBool("sitOrLayingBool", true);
